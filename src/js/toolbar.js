@@ -7,6 +7,12 @@ var toolbar =
 					that.toggleClass('bounce');
 					that.click(function(e){
 						e.preventDefault();
+						that.toggleClass('wobble');
+						setTimeout(function(){
+							that.toggleClass('wobble');
+						},1000);
+					});
+					that.mouseover(function(){
 						that.toggleClass('bounce');
 						setTimeout(function(){
 							that.toggleClass('bounce');
