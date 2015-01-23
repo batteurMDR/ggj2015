@@ -1,0 +1,9 @@
+{
+  	"name": "GGJ",
+  	"main": "ggj2015/src/index.html", 
+  	"window": {
+  		"fullscreen" : true,
+        "toolbar": false,
+        "frame"  : false
+  	}
+}
