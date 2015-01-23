@@ -4,5 +4,12 @@
 	border-radius:5px;
 	width:90%;
 	height:400px;
-	margin:10% auto;
+	margin:0% auto;
+}
+
+#toolbar
+{
+	height: 50px;
+	width:100%;
+	background-color:rgba(255,255,255,0.1);
 }
