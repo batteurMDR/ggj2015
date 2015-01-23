@@ -2,9 +2,16 @@ var toolbar =
 		{
 			init : function()
 			{
-				$('.btn').click(function(e){
-					e.preventDefault();
-					 $(this).addClass('animated bounce');
-				})
+				$('.btn').each(function(){
+					var that = $(this);
+					that.toggleClass('bounce');
+					that.click(function(e){
+						e.preventDefault();
+						that.toggleClass('bounce');
+						setTimeout(function(){
+							that.toggleClass('bounce');
+						},1000);
+					});
+				});
 			}
 		}
