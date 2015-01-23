@@ -6,9 +6,10 @@ var game =
 
 	 init : function()
 	 {
-	 	
+	 	toolbar.init();
 	 }
 
 }
-
-game.init();
+$(function(){
+	game.init();
+});
