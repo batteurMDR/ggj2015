@@ -1,28 +1,27 @@
 var game =
 {
-	sens : 1,
-	fps : 25,
-	toolbar : undefined,
-	splash_screen : undefined,
-	originalBirdVerticalPosition:0,
-	background:null,
+	sens 			: 1,
+	fps 			: 25,
+	toolbar 		: undefined,
+	splash_screen 	: undefined,
+	background 		: null,
+	screen_width	: 0,
 
-	gameObjectList : [],
+	gameObjectList 	: [],
     earthFramesList : [],
 
 	 init : function()
 	 {
-	 	this.background = new Background(["img/backgrounds/ingame2.png","img/backgrounds/ingame3.png"]);
-	 	this.toolbar = new Toolbar();
+	 	this.screen_width 	= $('#screen').width();
+	 	this.background 	= new Background(["img/backgrounds/ingame2.png","img/backgrounds/ingame3.png"]);
+	 	this.toolbar 		= new Toolbar();
 	 	this.toolbar.init();
 
-	 	this.splash_screen = new SplashScreen();
+	 	this.splash_screen 	= new SplashScreen();
 	 	this.splash_screen.init();
         
 
 		this.generateFrames();
-        //var oPosition = $('#bird').position();
-		//this.originalBirdVerticalPosition = oPosition.top,
 
 	 },
 

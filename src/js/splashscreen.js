@@ -26,7 +26,7 @@ function SplashScreen()
 		var $mainmenu = $('<div/>',{'id' : 'mainmenu'});
 	 	$('#screen').prepend($mainmenu);
 
-	 	$('#mainmenu').html('<h2 onclick="game.start();">Click to begin</h2>');
+	 	$('#mainmenu').html('<h1>Game Title</h1><h2 onclick="game.start();" class="animated pulse infinite" id="btn_start">Click to begin</h2>');
 
 
 	 }

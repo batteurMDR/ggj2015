@@ -7,14 +7,9 @@ body, html
 	overflow: hidden;
 	font-family: Helvetica;
 }
-.item{
-    position: absolute;
-}
 
 
-.item.cloud{
-    background: url('../img/gameObject/Cloud/nuage.png');
-}
+
 
 
 #screen

@@ -15,7 +15,6 @@
     left: 0;
     height: 100%;
   	-webkit-transition: opacity 0.5s ease-out; 
-
     -webkit-animation: moveSlideshow 10s linear infinite;
 }
 
@@ -38,4 +37,15 @@
     text-align: center;
     color:#FFF;
     cursor:pointer;
+}
+
+#btn_start
+{
+    background-color:#FC0;
+    color:#000;
+    width:75%;
+    height:40px;
+    margin:20% auto;
+    border-radius:5px;
+    padding:3%;
 }

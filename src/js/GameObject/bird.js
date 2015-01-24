@@ -49,7 +49,7 @@ function Bird()
     this.spriteAnimator = function()
     {
         $('#'+this.id).animateSprite({
-        fps: 1,
+        fps: 8,
         loop: true,
         animations: {
             flap: [0, 1]

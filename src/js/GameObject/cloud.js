@@ -14,7 +14,7 @@ function Cloud()
     this.fps = 24;
     
     this.animate = function(){
-        var width = $('#screen').width();
+        var width = game.screen_width;
         var vitesse = 30; //Pixels/sec
         this.x = this.x + vitesse * 1/this.fps;
         if(this.x > width){
