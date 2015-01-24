@@ -4,6 +4,7 @@ function Tree(x, y){
     this.height = 50;
     this.width = 10;
     this.zIndex = 5;
+    this.name = "tree";
     this.add = function(){
         // ajouter en bas sur les coordonnées.
         alert("Tree créé en "+x+"x"+y);
@@ -11,3 +12,4 @@ function Tree(x, y){
 }
 Tree.minY = 500;
 Tree.maxY = 750;
+

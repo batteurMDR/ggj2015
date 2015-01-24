@@ -7,7 +7,15 @@ var game =
 	 init : function()
 	 {
 	 	toolbar.init();
-	 }
+	 },
+
+     addItem: function(item){
+         alert(item.name)
+       var $item = $('<div>').addClass(item.name).addClass('item');
+       $item.offset({top: item.y - item.height, left: item.x}).width(item.width).height(item.height);
+
+       $('#screen').append($item);
+     }
 }
 var Generator = function(name){
     var number = 0;
@@ -28,7 +36,7 @@ var Generator = function(name){
         var x = Math.round(Math.random() * ($(window).width()));
         console.log(x);
         var item = new classe(x,y);
-       item.add(); 
+       game.addItem(item); 
     }
 }
 $(function(){
