@@ -8,11 +8,12 @@ var game =
 
 	originalBirdVerticalPosition:0,
 
+	gameObjectList : [],
+
 
 	 init : function()
 	 {
 	 	toolbar.init();
-	 	
 	 	var splash_screen = new SplashScreen();
 	 	splash_screen.init();
 
@@ -33,13 +34,14 @@ var game =
 
 	 animate : function()
 	 {
-
-
-
+	 	/*for(var oGameObject in this.gameObjectList )
+	 	{
+	 		oGameObject.animate();
+	 	}*/
 	 },
 
-
-    
+	 addGameObjectToList : function(oGameObject)
+	 {
+	 	this.gameObjectList.push(oGameObject);
+	 }
 }
-
-
