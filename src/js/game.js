@@ -36,8 +36,9 @@ var game =
 	 {
 	 	for(var oGameObject in this.gameObjectList )
 	 	{
-
-	 		this.gameObjectList[oGameObject].animate();
+            if(this.gameObjectList[oGameObject].animable){
+	 		    this.gameObjectList[oGameObject].animate();
+            }
 	 	}
 	 },
 

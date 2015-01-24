@@ -12,7 +12,7 @@ var Generator = function(name)
 	            return 4;
 	          
 	            break;
-	        case "cloud":
+	        case "clouds":
 	            return 1;          
         }
     }
@@ -27,7 +27,7 @@ var Generator = function(name)
 	        case "tree":
 	            return new Tree();
 	            break;
-	        case "cloud":
+	        case "clouds":
 	            return new Cloud();
 	            break;   
 	    }         
