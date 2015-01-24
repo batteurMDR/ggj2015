@@ -30,6 +30,11 @@
 	cursor:pointer;
 }
 
+.btn:hover
+{
+	background-color:rgba(80,80,255,1);
+}
+
 .btn .label
 {
 	font-size:10px;

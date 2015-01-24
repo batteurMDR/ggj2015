@@ -25,6 +25,7 @@ var game =
 	 init : function()
 	 {
 	 	this.screen_width 	= $('#screen').width();
+	 	this.screen_height 	= $('#screen').height();
 	 	this.background 	= new Background(["img/backgrounds/ingame2.png","img/backgrounds/ingame3.png"]);
 	 	this.toolbar 		= new Toolbar();
 	 	this.toolbar.init();
@@ -45,7 +46,7 @@ var game =
 		this.parallax = new Parallax(scene,
 			{
 				scalarX: 1,
-  				scalarY: 8,
+  				scalarY: 1,
   				relativeInput:false
 			});
 		this.parallax.enable();
@@ -88,7 +89,7 @@ var game =
 
 	 gameLoop : function()
 	 {
-	 	this.timer = setInterval(this.animate.bind(this),1/this.fps*1000);
+	 	this.timer_renderer = setInterval(this.animate.bind(this),1/this.fps*1000);
 	 },
 
 	 animate : function()
@@ -96,21 +97,28 @@ var game =
 	 	for(var oGameObject in this.gameObjectList )
 	 	{
             var gameObject = this.gameObjectList[oGameObject];
-            if(gameObject instanceof CloudRaindrop){
-                for(var key in this.treeGameObjectList){
-                    if(gameObject.x + gameObject.width >= this.treeGameObjectList[key].x && gameObject.x < this.treeGameObjectList[key].x + this.treeGameObjectList[key].width){
-                        if(this.treeGameObjectList[key].animable){
-                        setTimeout(function(){
-                            game.treeGameObjectList[key].spriteAnimator( game.treeGameObjectList[key].id);
-                        }, 10000);
-}
-                    }
-                }
-            }
+            this.detectSeedGrowth(gameObject);
+           
             if(gameObject.animable){
 	 		    gameObject.animate();
             }
 	 	}
+	 },
+
+	 detectSeedGrowth: function(gameObject)
+	 {
+		if(gameObject instanceof CloudRaindrop){
+            for(var key in this.treeGameObjectList){
+            	if(this.treeGameObjectList[key].animable){
+                	if(gameObject.x + gameObject.width >= this.treeGameObjectList[key].x && gameObject.x < this.treeGameObjectList[key].x + this.treeGameObjectList[key].width){
+                    
+                    setTimeout(function(){
+                        game.treeGameObjectList[key].spriteAnimator( game.treeGameObjectList[key].id);
+                    }, 10000);
+					}
+                }
+            }
+        }
 	 },
 
 	 addGameObjectToList : function(oGameObject)

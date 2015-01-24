@@ -6,18 +6,23 @@ function Raindrop(cloud){
     this.width = 5;
     this.name = "raindrop";
     this.parallax_depth =0.8;
+    this.id = "RainDrop"+Raindrop.Count;
+    
     
     this.animate = function(){
-        if(this.y > $('#screen').height()){
+        if(!this.oDOMElementRainDrop)
+            this.oDOMElementRainDrop = $('#'+this.id);
+
+        if(this.y > game.screen_height){
             cloud.getCoordinate();
-            this.x = Math.round(Math.random() * (cloud.Xmax - cloud.Xmin) + cloud.Xmin);
-            this.y = Math.round(Math.random() * (cloud.Ymax - cloud.Ymin) + cloud.Ymin);
+            this.x = parseInt(Math.random() * (cloud.Xmax - cloud.Xmin) + cloud.Xmin);
+            this.y = parseInt(Math.random() * (cloud.Ymax - cloud.Ymin) + cloud.Ymin);
             
         }
         this.y+= this.vitesse;
-       $('#'+this.id).offset({top: this.y, left: this.x}); 
+        this.oDOMElementRainDrop.offset({top: this.y, left: this.x}); 
     }
-    this.id = "RainDrop"+Raindrop.Count;
+    
     Raindrop.Count++;
     
 }

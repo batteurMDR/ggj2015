@@ -1,6 +1,6 @@
 function Tree(frame, posX)
 {
-    this.parallax_depth =0.2;
+    this.parallax_depth =1;
 
     if(frame == undefined || (frame < 0 || frame > 10)){
         frame = 1 + 2 * Math.round(Math.random()*(4));

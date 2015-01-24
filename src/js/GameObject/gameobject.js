@@ -45,7 +45,7 @@ GameObject.prototype.addItemToScreen=function()
                                 "width":this.width,
                                 "height":this.height,
                                 "class":this.name+" item layer",
-                                "data-depth":0.2
+                                "data-depth":this.parallax_depth
                             }
                     ).offset(
                             {
