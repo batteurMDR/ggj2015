@@ -17,6 +17,7 @@ var Generator = function(name, frame, posX)
 	          
 	            break;
 	        case "clouds":
+            case "rain":
 	            return 1;          
         }
     }
@@ -38,7 +39,10 @@ var Generator = function(name, frame, posX)
 	            break;
 	        case "clouds":
 	            return new Cloud();
-	            break;   
+	            break;  
+            case "rain":
+                return new CloudRaindrop();
+                break;
 	    }         
     }
 
