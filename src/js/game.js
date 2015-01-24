@@ -38,7 +38,7 @@ var game =
             } else {
                 scale = 5 - i /2;
             }
-            this.earthFramesList.push(new EarthFrame(scale, 700 - (i+1) * 20));
+            this.earthFramesList.push(new EarthFrame(scale, 700 - (i+1) * 20, 4* i -4));
         }
      },
 

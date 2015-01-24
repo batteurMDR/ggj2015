@@ -39,9 +39,11 @@ var Generator = function(name)
     for(var i = 0; i < number; i++)
     {
         var oGameObject = this.getGameObject(name);
-        oGameObject.generateCoordinate();
-       	oGameObject.addItemToScreen();
-       	game.addGameObjectToList(oGameObject);
+        if(oGameObject.name){
+            oGameObject.generateCoordinate();
+        	oGameObject.addItemToScreen();
+        	game.addGameObjectToList(oGameObject);
+        }
     }
 
     

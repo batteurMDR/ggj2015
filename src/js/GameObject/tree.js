@@ -2,6 +2,9 @@ function Tree()
 {
 
     this.frame = game.earthFramesList[1 + 2 * Math.round(Math.random()*(4))];
+    if(!this.frame.addTree()){
+        return false;
+    }
     this.height = 352*this.frame.scale;
     this.width = 256*this.frame.scale;
     this.background = "arbre"+this.width+".png";
