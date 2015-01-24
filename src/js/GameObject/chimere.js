@@ -21,11 +21,6 @@ function Chimere()
     this.minY = this.frame.maxY-25;
     this.maxY = this.frame.maxY;
     Chimere.count++;
-    this.animate = function()
-    {
-
-    }
-
 
     this.spriteAnimator = function()
     {
