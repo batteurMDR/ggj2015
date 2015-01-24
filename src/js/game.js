@@ -30,10 +30,8 @@ var game =
 
      addItem: function(item){
          alert(item.name)
-       var $item = $('<div>').addClass(item.name).addClass('item');
-       $item.offset({top: item.y - item.height, left: item.x}).width(item.width).height(item.height);
-
-       $('#screen').append($item);
+        var $item = $('<div/>',{"width":item.width,"height":item.height,"class":item.name+" item"}).offset({top: item.y - item.height, left: item.x}).css("z-index",item.zIndex);
+        $('#screen').append($item);
      }
 }
 var Generator = function(name){
