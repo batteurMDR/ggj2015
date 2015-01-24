@@ -8,7 +8,7 @@ var game =
 	 {
 	 	toolbar.init();
 	 	this.setBackground();
-	 	this.setClouds();
+	 	//this.setClouds();
 
 	 	
 	 },
@@ -29,7 +29,7 @@ var game =
 
 
      addItem: function(item){
-         alert(item.name)
+      //   alert(item.name)
        var $item = $('<div>').addClass(item.name).addClass('item');
        $item.offset({top: item.y - item.height, left: item.x}).width(item.width).height(item.height);
 
@@ -39,14 +39,20 @@ var game =
 var Generator = function(name){
     var number = 0;
     var classe = undefined;
+    //alert(name);
     switch(name){
         case "birds":
             number = 5;
-            classe = "Bird";
+            classe = window["Bird"];
             break;
         case "tree":
             number = 4;
             classe = window["Tree"];
+            break;
+        case "clouds":
+            number = 1;
+            classe = window["Cloud"];
+            //game.setClouds();
             break;
     }
     for(var i = 0; i < number; i++){

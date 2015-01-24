@@ -5,9 +5,17 @@ body, html
 	padding:0;
 	height:100%;
 }
+.item{
+    position: absolute;
+}
 .item.tree{
     background-color: green; 
-    position: absolute;
+}
+.item.cloud{
+    background-color: white;
+}
+.item.bird{
+    background-color: red;
 }
 #screen
 {
