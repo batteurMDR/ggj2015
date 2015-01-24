@@ -10,18 +10,13 @@ body, html
 .item{
     position: absolute;
 }
-.item.tree{
-   /* background: url('../img/gameObject/Tree/arbre.png');*/
 
-}
 
 .item.cloud{
     background: url('../img/gameObject/Cloud/nuage.png');
 }
 
-.item.bird{
-    background-color: red;
-}
+
 #screen
 {
 	background-color:#000;
@@ -29,6 +24,10 @@ body, html
 	height:100%;
 	margin:0% auto;
 }
-
-
-
+.background
+{
+	background-color: #000;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}

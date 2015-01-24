@@ -2,8 +2,8 @@
 function Bird()
 {
 
-    this.height = 5;
-    this.width = 5;
+    this.height = 64;
+    this.width = 64;
     this.zIndex = 10;
     this.name = "bird";
     this.id = 'Bird'+Bird.count;
@@ -12,12 +12,15 @@ function Bird()
 
     this.sens = 1;
     Bird.count++;
+    //GameObject.apply(this);
+
+
     this.animate = function()
     {
         //var oPosition = $('#bird').position();
         var width = $('#screen').width();
 
-        var vitesse = 160;//Pixels / sec
+        var vitesse = 30;//Pixels / sec
 
         this.x = this.x + vitesse * 1/game.fps * this.sens;
 
@@ -43,11 +46,38 @@ function Bird()
             );
     }
 
+    this.spriteAnimator = function()
+    {
+        $('#'+this.id).animateSprite({
+        fps: 1,
+        loop: true,
+        animations: {
+            flap: [0, 1]
+            
+        },
+        complete: function(){
+            //alert('Sprite animation complete!');
+        }
+        });
+        $('#'+this.id).animateSprite('play', 'flap');
+    }
+
+
+    
+
 }
 
 Bird.count = 0;
 
 Bird.prototype=new GameObject();
+
+Bird.prototype.addItemToScreen=function()
+{
+
+    GameObject.prototype.addItemToScreen.apply(this);
+    this.spriteAnimator();
+
+}
 
 
 

@@ -22,7 +22,8 @@ var Generator = function(name)
      	switch(name){
 	        case "birds":
 
-	            return new Bird();
+	            oBird =  new Bird();
+	            return oBird;
 	            break;
 	        case "tree":
 	            return new Tree();
