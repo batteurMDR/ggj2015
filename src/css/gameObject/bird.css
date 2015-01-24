@@ -1,0 +1,5 @@
+.item.bird{
+    background-image: url('../../img/gameObject/Bird/bird.png');
+    width:64px;
+    height:64px;
+}

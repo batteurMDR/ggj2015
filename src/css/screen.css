@@ -18,9 +18,7 @@ body, html
     background: url('../img/gameObject/Cloud/nuage.png');
 }
 
-.item.bird{
-    background-color: red;
-}
+
 #screen
 {
 	background-color:#000;
