@@ -34,10 +34,11 @@ var game =
 
 	 animate : function()
 	 {
-	 	/*for(var oGameObject in this.gameObjectList )
+	 	for(var oGameObject in this.gameObjectList )
 	 	{
-	 		oGameObject.animate();
-	 	}*/
+
+	 		this.gameObjectList[oGameObject].animate();
+	 	}
 	 },
 
 	 addGameObjectToList : function(oGameObject)
