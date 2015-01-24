@@ -1,0 +1,25 @@
+#cloudscontainer
+{
+	height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#clouds
+{
+	background: url('../img/backgrounds/clouds.png');
+	background-repeat: repeat-x;
+	width:2732px;
+	height:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  	-webkit-transition: opacity 0.5s ease-out; 
+
+    -webkit-animation: moveSlideshow 10s linear infinite;
+}
+
+@-webkit-keyframes moveSlideshow {
+    0% { left: 0; }
+    100% { left: -1366px; }
+}
