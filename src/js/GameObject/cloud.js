@@ -1,11 +1,11 @@
 function Cloud()
 {
-    this.height = 256;
-    this.width = 256;
+    this.height = 124;
+    this.width = 200;
     this.zIndex = 10;
     this.name = "cloud";
 
-    this.minY = 0;
+    this.minY = this.height-20;
     this.maxY = 300;
 
     this.id = 'Cloud'+Cloud.count;

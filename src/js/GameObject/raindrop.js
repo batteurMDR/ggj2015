@@ -1,7 +1,7 @@
 
 function Raindrop(cloud){
     this.cloud = cloud;
-    this.vitesse = Math.random()* 5 +1.5;
+    this.vitesse = Math.random()* 4 +2.5;
     this.height = 5;
     this.width = 5;
     this.name = "raindrop";

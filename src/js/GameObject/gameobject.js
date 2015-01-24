@@ -20,7 +20,7 @@ function GameObject()
 	this.generateCoordinate=function()
 	{
         var y = Math.round(Math.random() * (this.maxY - this.minY) + this.minY);
-        var x = Math.round(Math.random() * ($(window).width() - this.height) + this.height) - this.height;
+        var x = Math.round(Math.random() * $(window).width() );
 
         //console.log('Hey ho... voici mes coord '+x+'y='+y);
 
