@@ -7,6 +7,7 @@ var game =
 	background 		: null,
 	screen_width	: 0,
 
+    treeGameObjectList: [],
 	gameObjectList 	: [],
     earthFramesList : [],
 
@@ -76,14 +77,30 @@ var game =
 	 {
 	 	for(var oGameObject in this.gameObjectList )
 	 	{
-            if(this.gameObjectList[oGameObject].animable){
-	 		    this.gameObjectList[oGameObject].animate();
+            var gameObject = this.gameObjectList[oGameObject];
+            if(gameObject instanceof CloudRaindrop){
+                for(var key in this.treeGameObjectList){
+                    if(gameObject.x + gameObject.width >= this.treeGameObjectList[key].x && gameObject.x < this.treeGameObjectList[key].x + this.treeGameObjectList[key].width){
+                        if(this.treeGameObjectList[key].animable){
+                        setTimeout(function(){
+                            console.log( game.treeGameObjectList[key]);
+                            game.treeGameObjectList[key].spriteAnimator( game.treeGameObjectList[key].id);
+                        }, 10000);
+}
+                    }
+                }
+            }
+            if(gameObject.animable){
+	 		    gameObject.animate();
             }
 	 	}
 	 },
 
 	 addGameObjectToList : function(oGameObject)
 	 {
+        if(oGameObject instanceof Tree){
+            this.treeGameObjectList.push(oGameObject);
+        }
 	 	this.gameObjectList.push(oGameObject);
 	 }
 }
