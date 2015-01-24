@@ -1,0 +1,14 @@
+#clouds
+{
+	background-image: url('../img/backgrounds/clouds.png');
+	width:100%;
+	height:100%;
+  -webkit-transition: opacity 0.5s ease-out; 
+
+    -webkit-animation: moveSlideshow 60s linear infinite;
+}
+
+@-webkit-keyframes moveSlideshow {
+    0% { left: 0; }
+    100% { left: -1684px; }
+}
