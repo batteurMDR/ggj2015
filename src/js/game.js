@@ -1,6 +1,3 @@
-
-
-
 var game =
 {
 	sens : 1,
@@ -8,12 +5,14 @@ var game =
 	toolbar : undefined,
 	splash_screen : undefined,
 	originalBirdVerticalPosition:0,
+	background:null,
 
 	gameObjectList : [],
 
 
 	 init : function()
 	 {
+	 	this.background = new Background(["img/backgrounds/ingame2.png","img/backgrounds/ingame3.png"]);
 	 	this.toolbar = new Toolbar();
 	 	this.toolbar.init();
 
@@ -30,16 +29,14 @@ var game =
 	 {
 		this.splash_screen.hide();
 		$('#cloudscontainer').hide();
-		this.swapBackground();
+		this.background.init();
 		this.toolbar.show();
 		this.gameLoop();
 	 },
 
 	swapBackground:function()
 	{
-		$('#screen').css(
-	 							"background-image", "url(img/backgrounds/ingame.png)"
-	 						);
+		$('#screen').css("background-image", "url(img/backgrounds/ingame.png)");
 	},
 
 
