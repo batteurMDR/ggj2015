@@ -5,6 +5,7 @@ body, html
 	padding:0;
 	height:100%;
 	overflow: hidden;
+	font-family: Helvetica;
 }
 .item{
     position: absolute;
@@ -13,9 +14,11 @@ body, html
    /* background: url('../img/gameObject/Tree/arbre.png');*/
 
 }
+
 .item.cloud{
-    background-color: white;
+    background: url('../img/gameObject/Cloud/nuage.png');
 }
+
 .item.bird{
     background-color: red;
 }
@@ -27,22 +30,5 @@ body, html
 	margin:0% auto;
 }
 
-#toolbar
-{
-	height: 50px;
-	width:100%;
-	background-color:rgba(255,255,255,0.2);
-	position:absolute;
-	bottom:10px;
-	z-index: 50;
-}
 
-.btn
-{
-	width:40px;
-	height:40px;
-	margin:5px;
-	background-color:rgba(50,50,255,1);
-	float:left;
-	border-radius:3px;
-}
+

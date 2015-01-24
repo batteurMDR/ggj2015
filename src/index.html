@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="css/screen.css">
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/splashscreen.css">
+        <link rel="stylesheet" href="css/toolbar.css">
         <script src="js/vendor/jquery-2.1.3.min.js"></script>
         <script src="js/GameObject/gameobject.js"></script>
         <script src="js/toolbar.js"></script>
@@ -27,9 +28,10 @@
     <div id="screen">
         <!--div id="bird" style="width:10px;height:10px;background-color:#000;position:absolute;top:100px;left:10px;"></div-->
         <div id="toolbar">
-            <div class="btn tree animated bounce" data-title-btn="tree"></div>
-            <div class="btn birds animated bounce" data-title-btn="birds"></div>
-            <div class="btn clouds animated bounce" data-title-btn="clouds"></div>
+            <div class="btn tree animated bounce" data-title-btn="tree"><div class="label">Trees</div></div>
+            <div class="btn birds animated bounce" data-title-btn="birds"><div class="label">Birds</div></div>
+            <div class="btn clouds animated bounce" data-title-btn="clouds"><div class="label">Clouds</div></div>
+            <div class="btn" id="btn_restart" onclick="game.restart();"><div class="label">Restart</div></div>
         </div>        
     </div>
 

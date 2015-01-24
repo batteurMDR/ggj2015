@@ -1,13 +1,16 @@
 function Cloud()
 {
-    this.height = 50;
-    this.width = 50;
+    this.height = 256;
+    this.width = 256;
     this.zIndex = 10;
     this.name = "cloud";
+
+    this.minY = 0;
+    this.maxY = 300;
+
     this.id = 'Cloud'+Cloud.count;
     Cloud.count++;
-    this.minY = 00;
-    this.maxY = 250;
+
     this.fps = 24;
     
     this.animate = function(){
@@ -19,6 +22,7 @@ function Cloud()
         }
         $('#'+this.id).offset({left: this.x});
     }
+
 
 }
 

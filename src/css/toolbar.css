@@ -1,0 +1,37 @@
+
+#toolbar
+{
+	height: 50px;
+	width:100%;
+	background-color:rgba(255,255,255,0.2);
+	position:absolute;
+	bottom:10px;
+	z-index: 50;
+	display:none;
+	box-shadow: 1px 1px 10px rgba(0,0,0,0.8);
+}
+
+#btn_restart
+{
+	float:right;
+}
+
+.btn
+{
+	width:40px;
+	height:40px;
+	margin:5px;
+	background-color:rgba(50,50,255,1);
+	float:left;
+	border-radius:3px;
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+	color:#FFF;
+	text-align: center;
+	cursor:pointer;
+}
+
+.btn .label
+{
+	font-size:10px;
+	margin-top:15px;
+}

@@ -5,7 +5,8 @@ var game =
 {
 	sens : 1,
 	fps : 25,
-
+	toolbar : undefined,
+	splash_screen : undefined,
 	originalBirdVerticalPosition:0,
 
 	gameObjectList : [],
@@ -13,17 +14,21 @@ var game =
 
 	 init : function()
 	 {
-	 	toolbar.init();
-	 	var splash_screen = new SplashScreen();
-	 	splash_screen.init();
-        this.generateFrames();
-		//var oPosition = $('#bird').position();
+        
+
+	 	this.toolbar = new Toolbar();
+	 	this.toolbar.init();
+
+	 	this.splash_screen = new SplashScreen();
+	 	this.splash_screen.init();
+        
+
+		this.generateFrames();
+        //var oPosition = $('#bird').position();
 		//this.originalBirdVerticalPosition = oPosition.top,
 
-	 	this.gameLoop();
-
-
 	 },
+
 
 	 generateFrames: function(){
         for(var i = 1; i <= 10; i++){
@@ -36,6 +41,39 @@ var game =
             this.earthFramesList.push(new EarthFrame(scale, 700 - (i+1) * 20));
         }
      },
+
+	
+	 start:function()
+	 {
+		this.splash_screen.hide();
+		$('#cloudscontainer').hide();
+		this.swapBackground();
+		this.toolbar.show();
+		this.gameLoop();
+	 },
+
+	swapBackground:function()
+	{
+		$('#screen').css(
+	 							"background-image", "url(img/backgrounds/ingame.png)"
+	 						);
+	},
+
+
+	 restart:function()
+	 {
+	 	$('.item').each(function()
+	 						{
+	 							$(this).remove();
+	 						});
+	 	this.gameObjectList = [];
+	 	this.toolbar.hide();
+	 	this.splash_screen.show();
+	 	this.splash_screen.setBackground();
+	 	$('#cloudscontainer').show();
+
+	 },
+
 
 	 gameLoop : function()
 	 {
