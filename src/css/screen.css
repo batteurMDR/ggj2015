@@ -11,7 +11,8 @@ body, html
     position: absolute;
 }
 .item.tree{
-    background: url('../img/gameObject/Tree/arbre.png');
+   /* background: url('../img/gameObject/Tree/arbre.png');*/
+
 }
 
 .item.cloud{

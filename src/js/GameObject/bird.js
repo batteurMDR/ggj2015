@@ -9,7 +9,7 @@ function Bird()
     this.id = 'Bird'+Bird.count;
     this.minY = 00;
     this.maxY = 250;
-    this.fps = 24;
+
     this.sens = 1;
     Bird.count++;
     //GameObject.apply(this);
@@ -22,7 +22,7 @@ function Bird()
 
         var vitesse = 30;//Pixels / sec
 
-        this.x = this.x + vitesse * 1/this.fps * this.sens;
+        this.x = this.x + vitesse * 1/game.fps * this.sens;
 
         
 

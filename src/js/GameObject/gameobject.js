@@ -25,8 +25,6 @@ function GameObject()
         this.setCoordinate(x,y);
     }
 
-    
-
      this.animate=function()
      {
 

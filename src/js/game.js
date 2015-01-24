@@ -10,20 +10,37 @@ var game =
 	originalBirdVerticalPosition:0,
 
 	gameObjectList : [],
-
+    earthFramesList : [],
 
 	 init : function()
 	 {
+        
+
 	 	this.toolbar = new Toolbar();
 	 	this.toolbar.init();
 
 	 	this.splash_screen = new SplashScreen();
 	 	this.splash_screen.init();
+        
 
-		//var oPosition = $('#bird').position();
+		this.generateFrames();
+        //var oPosition = $('#bird').position();
 		//this.originalBirdVerticalPosition = oPosition.top,
 
 	 },
+
+
+	 generateFrames: function(){
+        for(var i = 1; i <= 10; i++){
+            var scale = 0;
+            if((i-1) % 2 == 1){
+                scale = 1/Math.pow(2, (i)/2 - 1);
+            } else {
+                scale = 5 - i /2;
+            }
+            this.earthFramesList.push(new EarthFrame(scale, 700 - (i+1) * 20));
+        }
+     },
 
 	
 	 start:function()
@@ -56,6 +73,7 @@ var game =
 	 	$('#cloudscontainer').show();
 
 	 },
+
 
 	 gameLoop : function()
 	 {
