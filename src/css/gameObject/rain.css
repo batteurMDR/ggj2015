@@ -1,5 +1,5 @@
 .item.raindrop{
-    height: 5px;
-    width: 5px;
-    background-color: blue;
+    height: 17px;
+    width: 8px;
+    background-image: url(../../img/gameObject/RainDrop/gouttedeau.png);
 }

@@ -21,7 +21,7 @@ function GameObject()
 	this.generateCoordinate=function()
 	{
         var y = Math.round(Math.random() * (this.maxY - this.minY) + this.minY);
-        var x = Math.round(Math.random() * ($(window).width() - this.height) + this.height) - this.height;
+        var x = Math.round(Math.random() * $(window).width() );
 
         this.setCoordinate(x,y);
     }

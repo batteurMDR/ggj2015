@@ -25,14 +25,14 @@ function Tree(frame, posX)
     }
     this.animate = function(){
         //if(this.height > 100){
-            this.animable= false;
+           // this.animable= false;
         //}
        // this.height++;
-       $('#'+this.id).height(this.height).offset({top:$('#'+this.id).offset().top-1}); 
+       
     }
 
 
-    this.spriteAnimator = function()
+    this.spriteAnimator = function(id)
     {
         var sprite_sequence = new Array();
         for(var i = 0; i < 60; i++)
@@ -40,7 +40,7 @@ function Tree(frame, posX)
             sprite_sequence.push(i);
         }
 
-        $('#'+this.id).animateSprite({
+        $('#'+id).animateSprite({
             fps: 15,
             loop: false,
             animations: {
@@ -50,7 +50,8 @@ function Tree(frame, posX)
             complete: function(){
             }
         });
-        $('#'+this.id).animateSprite('play', 'grow');
+        $('#'+id).animateSprite('play', 'grow');
+        this.animable = false;
     }
 }
 
@@ -66,8 +67,8 @@ Tree.prototype.addItemToScreen=function()
 
     //$("#"+this.id ).css('background-image',"url('img/gameObject/Tree/"+this.background+"')");
     $("#"+this.id ).css('background-image',"url('img/gameObject/Tree/tree_anim.png')");
-    this.spriteAnimator();
-
+    //this.spriteAnimator();
+    
 //    $("#"+this.id ).css('background-image',"url('img/gameObject/Tree/"+this.background+"')");
 //    $('#'+this.id).css('opacity', this.frame.opacity);
 
