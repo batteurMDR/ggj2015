@@ -61,6 +61,6 @@ GameObject.prototype.addItemToScreen=function()
                             }
                             ).css("z-index",this.zIndex)
                             .attr('id', this.id);
-
+ 
         $('#screen').append($item);
      }   

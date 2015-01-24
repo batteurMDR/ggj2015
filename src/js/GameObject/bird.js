@@ -72,26 +72,12 @@ Bird.count = 0;
 Bird.prototype=new GameObject();
 
 Bird.prototype.addItemToScreen=function()
-    {
-        /*var $item = $('<div/>',
-                            {
-                                "width":this.width,
-                                "height":this.height,
-                                "class":this.name+" item"
-                            }
-                    ).offset(
-                            {
-                                top: this.y - this.height,
-                                left: this.x
-                            }
-                            ).css("z-index",this.zIndex)
-                            .attr('id', this.id);
+{
 
-        $('#screen').append($item);*/
-        GameObject.prototype.addItemToScreen.apply(this);
-        this.spriteAnimator();
+    GameObject.prototype.addItemToScreen.apply(this);
+    this.spriteAnimator();
 
-    }
+}
 
 
 

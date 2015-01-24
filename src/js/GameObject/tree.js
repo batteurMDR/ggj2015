@@ -29,3 +29,13 @@ function Tree()
 
 Tree.prototype=new GameObject();
 Tree.count = 0;
+
+Tree.prototype.addItemToScreen=function()
+{
+    console.log('Tree addItem'+this.id+"back"+this.background);
+    GameObject.prototype.addItemToScreen.apply(this);
+
+    $("#"+this.id ).css('background-image',"url('img/gameObject/Tree/"+this.background+"')");
+
+
+}
