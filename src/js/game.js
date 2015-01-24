@@ -7,6 +7,7 @@ var game =
 	background 		: null,
 	screen_width	: 0,
 	parallax 		: undefined,
+	dnd 			: null,
 
     treeGameObjectList: [],
 	gameObjectList 	: [],
@@ -16,7 +17,6 @@ var game =
 	fps : 25,
 	toolbar : undefined,
 	splash_screen : undefined,
-	originalBirdVerticalPosition:0,
 	background:null,
 
 	gameObjectList : [],
@@ -29,6 +29,8 @@ var game =
 	 	this.background 	= new Background(["img/backgrounds/ingame2.png","img/backgrounds/ingame3.png"]);
 	 	this.toolbar 		= new Toolbar();
 	 	this.toolbar.init();
+	 	this.dnd 			= new DragnDrop();
+	 	this.dnd.init();
 
 	 	this.splash_screen 	= new SplashScreen();
 	 	this.splash_screen.init();

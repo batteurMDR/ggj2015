@@ -1,24 +1,6 @@
 function Toolbar()  
 {
-    var pos;
-    $('#draggable').draggable({
-        start:function(){
-            pos = $(this).closest('.btn').offset();
-            
-       
-            
-        }
 
-        
-        ,
-        stop:function(){
-            var frame = game.frameHandler.getCurrentTreeFrame($(this).offset().top);
-            new Generator($(this).closest('.btn').data('titleBtn'), frame.id, $(this).offset().left);
-            $(this).offset({top: pos.top + 5, left: pos.left + 5});
-        }
-    
-    
-    });
 	this.init=function()
 	{
         
