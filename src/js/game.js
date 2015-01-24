@@ -3,27 +3,37 @@
 
 var game =
 {
+	sens : 1,
+	fps : 25,
+
+	originalBirdVerticalPosition:0,
+
 
 	 init : function()
 	 {
 	 	toolbar.init();
-	 	this.setBackground();
-	 	this.setClouds();
-
 	 	
+	 	var splash_screen = new SplashScreen();
+	 	splash_screen.init();
+
+		var oPosition = $('#bird').position();
+		this.originalBirdVerticalPosition = oPosition.top,
+
+	 	this.gameLoop();
+
+
 	 },
 
-	 setBackground : function()
+	
+
+	 gameLoop : function()
 	 {
-	 	$('#screen').css(
-	 							"background-image", "url(img/backgrounds/background0.png)"
-	 						);
+	 	this.timer = setInterval(this.animate.bind(this),1/this.fps*1000);
 	 },
 
-	 setClouds : function()
+	 animate : function()
 	 {
-	 	var clouds = $('<div/>',{'id' : 'clouds'})
-	 	$('#screen').prepend(clouds);	
+	 	
 	 }
 
 }
