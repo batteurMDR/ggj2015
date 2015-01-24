@@ -1,10 +1,14 @@
-function Tree()
+function Tree(frame, posX)
 {
-
-    this.frame = game.earthFramesList[1 + 2 * Math.round(Math.random()*(4))];
-    if(!this.frame.addTree()){
-        return false;
+    if(frame == undefined || (frame < 0 || frame > 10)){
+        frame = 1 + 2 * Math.round(Math.random()*(4));
     }
+    while(!game.frameHandler.earthFramesList[frame].addTree() && frame <= 10){
+        frame+= 2;
+    }
+    console.log(frame);
+    this.frame = game.frameHandler.earthFramesList[frame];
+    
     this.height = 352*this.frame.scale;
     this.width = 256*this.frame.scale;
     this.background = "arbre"+this.width+".png";
@@ -15,6 +19,9 @@ function Tree()
     this.minY = this.frame.maxY-25;
     this.maxY = this.frame.maxY;
     Tree.count++;
+    if(posX != undefined){
+        this.setCoordinate(posX, Math.round(Math.random() * (this.maxY - this.minY) + this.minY));
+    }
     this.animate = function(){
         //if(this.height > 100){
             this.animable= false;

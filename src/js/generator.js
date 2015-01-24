@@ -1,4 +1,4 @@
-var Generator = function(name)
+var Generator = function(name, frame, posX)
 {
 
 	this.getObjectCountToCreate = function(name)
@@ -9,7 +9,11 @@ var Generator = function(name)
 	          
 	            break;
 	        case "tree":
-	            return 4;
+	            if(frame != undefined){
+	                return 1;
+                }else{
+                    return 4;
+                }
 	          
 	            break;
 	        case "clouds":
@@ -26,7 +30,11 @@ var Generator = function(name)
 	            return oBird;
 	            break;
 	        case "tree":
-	            return new Tree();
+                if(frame != undefined){
+	                return new Tree(frame, posX);
+                }else{
+                    return new Tree();
+                }
 	            break;
 	        case "clouds":
 	            return new Cloud();
@@ -37,11 +45,12 @@ var Generator = function(name)
     var number = this.getObjectCountToCreate(name);
     
 
-    for(var i = 0; i < number; i++)
+    for(var i = 0; i < number; i++)2
     {
         var oGameObject = this.getGameObject(name);
         if(oGameObject.name){
-            oGameObject.generateCoordinate();
+            if(!oGameObject.areCoordonateSet())
+                oGameObject.generateCoordinate();
         	oGameObject.addItemToScreen();
         	game.addGameObjectToList(oGameObject);
         }

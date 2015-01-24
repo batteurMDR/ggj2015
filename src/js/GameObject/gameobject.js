@@ -2,6 +2,8 @@ function GameObject()
 {
     this.animable = true;
 	this.id = 0;
+    this.x = undefined;
+    this.y = undefined;
 
     this.setCoordinate=function(x,y)
 	{
@@ -27,6 +29,10 @@ function GameObject()
 
      this.animate=function()
      {
+
+     }
+     this.areCoordonateSet = function(){
+        return this.x != undefined && this.y != undefined;
 
      }
 }
