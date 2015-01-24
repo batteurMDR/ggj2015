@@ -40,6 +40,9 @@ function GameObject()
         					}
         					).css("z-index",this.zIndex)
                             .attr('id', this.id);
+        if(this.background){
+            $item.css('background-image', "url('img/gameObject/Tree/"+this.background+"')");
+        }
 
         $('#screen').append($item);
      }   

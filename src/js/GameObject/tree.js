@@ -1,25 +1,28 @@
 function Tree()
 {
-
-    this.height = 10;
-    this.width = 10;
-
-    //this.height = 512;
-    //this.width = 512;
-
-    this.zIndex = 5;
+    this.frame = game.earthFramesList[1 + 2 * Math.round(Math.random()*(4))];
+    this.height = 352*this.frame.scale;
+    this.width = 256*this.frame.scale;
+    this.background = "arbre"+this.width+".png";
+    //alert(this.frame);
+    this.zIndex = this.frame.id;
     this.name = "tree";
     this.id = "Tree"+Tree.count;
-    this.minY = 500;
-    this.maxY = 750;
+    this.minY = this.frame.maxY-25;
+    this.maxY = this.frame.maxY;
     Tree.count++;
     this.animate = function(){
-        if(this.height > 100){
+        //if(this.height > 100){
             this.animable= false;
-        }
-        this.height++;
+        //}
+       // this.height++;
        $('#'+this.id).height(this.height).offset({top:$('#'+this.id).offset().top-1}); 
     }
+    /*this.generateCoordinate = function(){
+        var y = this.frame.maxY;
+        var x = Math.round(Math.random() * ($(window).width()));
+        this.setCoordinate(x,y);
+    }*/
 }
 
 
