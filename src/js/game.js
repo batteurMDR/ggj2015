@@ -6,6 +6,7 @@ var game =
 	splash_screen 	: undefined,
 	background 		: null,
 	screen_width	: 0,
+	parallax 		: undefined,
 
 	gameObjectList 	: [],
     earthFramesList : [],
@@ -32,11 +33,28 @@ var game =
         
         this.frameHandler = new FrameHandler();
         this.frameHandler.generateFrames();
+        this.parallax();
+
 	 },
 
 
-
+	 parallax:function()
+	 {
+	 	var scene = document.getElementById('screen');
+		this.parallax = new Parallax(scene,
+			{
+				scalarX: 30,
+  				scalarY: 8,
+  				relativeInput:false
+			});
+		this.parallax.enable();
+	 },
 	
+	 parallax_update:function()
+	 {
+	 	this.parallax.updateLayers();
+	 },
+
 	 start:function()
 	 {
 		this.splash_screen.hide();

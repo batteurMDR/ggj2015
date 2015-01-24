@@ -4,6 +4,7 @@ function Cloud()
     this.width = 256;
     this.zIndex = 10;
     this.name = "cloud";
+    this.parallax_depth =1;
 
     this.minY = 0;
     this.maxY = 300;

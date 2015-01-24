@@ -4,6 +4,7 @@ function GameObject()
 	this.id = 0;
     this.x = undefined;
     this.y = undefined;
+    this.parallax_depth =0.5;
 
     this.setCoordinate=function(x,y)
 	{
@@ -22,8 +23,6 @@ function GameObject()
         var y = Math.round(Math.random() * (this.maxY - this.minY) + this.minY);
         var x = Math.round(Math.random() * ($(window).width() - this.height) + this.height) - this.height;
 
-        //console.log('Hey ho... voici mes coord '+x+'y='+y);
-
         this.setCoordinate(x,y);
     }
 
@@ -38,19 +37,6 @@ function GameObject()
 }
 
 
-/*
-GameObject.prototype.setSize=function(width,height)
-{
-	this.width = width;
-	this.height = height;
-}
-
-GameObject.prototype.setCoordinate=function(x,y)
-{
-	this.x = x;
-	this.y = y;
-}*/
-
 
 GameObject.prototype.addItemToScreen=function()
      {
@@ -58,7 +44,8 @@ GameObject.prototype.addItemToScreen=function()
                             {
                                 "width":this.width,
                                 "height":this.height,
-                                "class":this.name+" item"
+                                "class":this.name+" item layer",
+                                "data-depth":0.2
                             }
                     ).offset(
                             {
@@ -69,4 +56,5 @@ GameObject.prototype.addItemToScreen=function()
                             .attr('id', this.id);
  
         $('#screen').append($item);
+        game.parallax_update();
      }   

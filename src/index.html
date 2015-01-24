@@ -6,6 +6,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/screen.css">
@@ -20,11 +21,13 @@
         <link rel="stylesheet" href="js/jquery-ui-1.11.2.custom/jquery-ui.css" />
 
 
-
+        
         <script src="js/vendor/jquery-2.1.3.min.js"></script>
+
+        <script src="js/vendor/parallax/requestAnimationFrame.js"></script>
         <script src="js/jquery-ui-1.11.2.custom/jquery-ui.js"></script>
         <script src="js/vendor/jquery.animateSprite.min.js"></script>
-        <!--<script src="js/vendor/parallax/jquery.parallax.js"></script>-->
+        
         <script src="js/GameObject/gameobject.js"></script>
         <script src="js/toolbar.js"></script>
         <script src="js/framehandler.js"></script>
@@ -47,11 +50,11 @@
             <div class="btn tree animated bounce" data-title-btn="tree"><img src="./img/Toolbar/seed.jpg" height="30" width="30" class="img-toolbar" id="draggable" style="border-radius:3px;"/></div>
             <div class="btn birds animated bounce" data-title-btn="birds"><div class="label">Birds</div></div>
             <div class="btn clouds animated bounce" data-title-btn="clouds"><div class="label">Clouds</div></div>
-             <div class="btn rain animated bounce" data-title-btn="rain"><div class="label">Rain</div></div>
+            <div class="btn rain animated bounce" data-title-btn="rain"><div class="label">Rain</div></div>
             <div class="btn" id="btn_restart" onclick="game.restart();"><div class="label">Restart</div></div>
         </div>        
     </div>
     <div class="audio"></div>
-
+    <script src="js/vendor/parallax/parallax.js"></script>
     </body>
 </html>

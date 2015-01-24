@@ -240,8 +240,8 @@
       if (this.transform3DSupport) this.accelerate(layer);
       layer.style.position = i ? 'absolute' : 'relative';
       layer.style.display = 'block';
-      layer.style.left = 0;
-      layer.style.top = 0;
+      //layer.style.left = 0;
+      //layer.style.top = 0;
 
       // Cache Layer Depth
       this.depths.push(this.data(layer, 'depth') || 0);

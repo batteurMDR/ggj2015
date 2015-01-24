@@ -1,9 +1,12 @@
 function CloudRaindrop(){
-    this.number = 300;
+    this.number = 50;
     this.raindrops = [];
     this.dropped= 0;
     this.todrop = 1;
     this.id = "CloudRain"+Cloud.count;
+    this.parallax_depth =0.8;
+
+
     this.getCoordinate= function(){
         this.Xmin = $("#"+this.id).offset().left;
         this.Xmax =this.Xmin + $("#"+this.id).width();

@@ -4,6 +4,8 @@ function Raindrop(){
     this.height = 5;
     this.width = 5;
     this.name = "raindrop";
+    this.parallax_depth =0.8;
+    
     this.animate = function(){
         this.y+= this.vitesse;
        $('#'+this.id).offset({top: this.y}); 

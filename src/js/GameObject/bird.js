@@ -12,6 +12,7 @@ function Bird()
 
     this.sens = 1;
     Bird.count++;
+    this.parallax_depth =0.8;
     //GameObject.apply(this);
 
 
