@@ -5,7 +5,7 @@ function Cloud()
     this.zIndex = 10;
     this.name = "cloud";
 
-    this.minY = this.height-20;
+    this.minY = 0;
     this.maxY = 300;
 
     this.id = 'Cloud'+Cloud.count;

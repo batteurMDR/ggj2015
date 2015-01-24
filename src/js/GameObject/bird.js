@@ -18,7 +18,7 @@ function Bird()
     this.animate = function()
     {
         //var oPosition = $('#bird').position();
-        var width = $('#screen').width();
+        var width = game.screen_width;
 
         var vitesse = 30;//Pixels / sec
 
