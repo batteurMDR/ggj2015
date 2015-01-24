@@ -39,6 +39,6 @@ Tree.prototype.addItemToScreen=function()
     GameObject.prototype.addItemToScreen.apply(this);
 
     $("#"+this.id ).css('background-image',"url('img/gameObject/Tree/"+this.background+"')");
-
+    $('#'+this.id).css('opacity', this.frame.opacity);
 
 }
