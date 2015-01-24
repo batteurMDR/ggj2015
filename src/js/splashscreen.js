@@ -15,7 +15,8 @@ function SplashScreen()
 
 	 this.setClouds=function()
 	 {
-	 	var clouds = $('<div/>',{'id' : 'clouds'})
-	 	$('#screen').prepend(clouds);	
+	 	var clouds = $('<div/>',{'id' : 'clouds'});
+	 	var cloudscontainer = $('<div/>',{'id' : 'cloudscontainer'}).append(clouds);
+	 	$('#screen').prepend(cloudscontainer);	
 	 }
 }

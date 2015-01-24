@@ -5,7 +5,10 @@ body, html
 	padding:0;
 	height:100%;
 }
-
+.item.tree{
+    background-color: green; 
+    position: absolute;
+}
 #screen
 {
 	background-color:#000;

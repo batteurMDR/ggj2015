@@ -16,8 +16,8 @@ var game =
 	 	var splash_screen = new SplashScreen();
 	 	splash_screen.init();
 
-		var oPosition = $('#bird').position();
-		this.originalBirdVerticalPosition = oPosition.top,
+		//var oPosition = $('#bird').position();
+		//this.originalBirdVerticalPosition = oPosition.top,
 
 	 	this.gameLoop();
 
@@ -33,10 +33,13 @@ var game =
 
 	 animate : function()
 	 {
-	 	
-	 }
 
+
+
+	 },
+
+
+    
 }
-$(function(){
-	game.init();
-});
+
+
