@@ -44,4 +44,5 @@ body, html
 	background-color:rgba(50,50,255,1);
 	float:left;
 	border-radius:3px;
+	cursor: pointer;
 }
