@@ -44,7 +44,7 @@ var game =
 	 	var scene = document.getElementById('screen');
 		this.parallax = new Parallax(scene,
 			{
-				scalarX: 30,
+				scalarX: 1,
   				scalarY: 8,
   				relativeInput:false
 			});
@@ -101,7 +101,6 @@ var game =
                     if(gameObject.x + gameObject.width >= this.treeGameObjectList[key].x && gameObject.x < this.treeGameObjectList[key].x + this.treeGameObjectList[key].width){
                         if(this.treeGameObjectList[key].animable){
                         setTimeout(function(){
-                            console.log( game.treeGameObjectList[key]);
                             game.treeGameObjectList[key].spriteAnimator( game.treeGameObjectList[key].id);
                         }, 10000);
 }
