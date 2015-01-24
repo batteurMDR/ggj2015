@@ -1,6 +1,8 @@
 function GameObject()
 {
-	this.setCoordinate=function(x,y)
+    this.animable = true;
+	this.id = 0;
+    this.setCoordinate=function(x,y)
 	{
 		this.x = x;
 		this.y = y;
@@ -17,7 +19,7 @@ function GameObject()
         var y = Math.round(Math.random() * (this.maxY - this.minY) + this.minY);
         var x = Math.round(Math.random() * ($(window).width()));
 
-        console.log('Hey ho... voici mes coord '+x+'y='+y);
+        //console.log('Hey ho... voici mes coord '+x+'y='+y);
 
         this.setCoordinate(x,y);
     }
@@ -36,7 +38,8 @@ function GameObject()
         						top: this.y - this.height,
         						left: this.x
         					}
-        					).css("z-index",this.zIndex);
+        					).css("z-index",this.zIndex)
+                            .attr('id', this.id);
 
         $('#screen').append($item);
      }   

@@ -13,7 +13,7 @@ var Generator = function(name)
 	          
 	            break;
 	        case "clouds":
-	            return 5;          
+	            return 1;          
         }
     }
 

@@ -29,15 +29,32 @@ var game =
 	 start:function()
 	 {
 		this.splash_screen.hide();
+		$('#cloudscontainer').hide();
+		this.swapBackground();
 		this.toolbar.show();
 		this.gameLoop();
 	 },
 
+	swapBackground:function()
+	{
+		$('#screen').css(
+	 							"background-image", "url(img/backgrounds/ingame.png)"
+	 						);
+	},
+
 
 	 restart:function()
 	 {
+	 	$('.item').each(function()
+	 						{
+	 							$(this).remove();
+	 						});
+	 	this.gameObjectList = [];
 	 	this.toolbar.hide();
 	 	this.splash_screen.show();
+	 	this.splash_screen.setBackground();
+	 	$('#cloudscontainer').show();
+
 	 },
 
 	 gameLoop : function()
@@ -47,10 +64,12 @@ var game =
 
 	 animate : function()
 	 {
-	 	/*for(var oGameObject in this.gameObjectList )
+	 	for(var oGameObject in this.gameObjectList )
 	 	{
-	 		oGameObject.animate();
-	 	}*/
+            if(this.gameObjectList[oGameObject].animable){
+	 		    this.gameObjectList[oGameObject].animate();
+            }
+	 	}
 	 },
 
 	 addGameObjectToList : function(oGameObject)
