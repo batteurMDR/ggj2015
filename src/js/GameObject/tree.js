@@ -1,7 +1,12 @@
 function Tree()
 {
+
     this.height = 10;
     this.width = 10;
+
+    //this.height = 512;
+    //this.width = 512;
+
     this.zIndex = 5;
     this.name = "tree";
     this.id = "Tree"+Tree.count;

@@ -10,7 +10,7 @@ body, html
     position: absolute;
 }
 .item.tree{
-    background-color: green; 
+    background: url('../img/gameObject/Tree/arbre.png');
 }
 .item.cloud{
     background-color: white;
