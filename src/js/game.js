@@ -5,7 +5,8 @@ var game =
 {
 	sens : 1,
 	fps : 25,
-
+	toolbar : undefined,
+	splash_screen : undefined,
 	originalBirdVerticalPosition:0,
 
 	gameObjectList : [],
@@ -13,19 +14,31 @@ var game =
 
 	 init : function()
 	 {
-	 	toolbar.init();
-	 	var splash_screen = new SplashScreen();
-	 	splash_screen.init();
+	 	this.toolbar = new Toolbar();
+	 	this.toolbar.init();
+
+	 	this.splash_screen = new SplashScreen();
+	 	this.splash_screen.init();
 
 		//var oPosition = $('#bird').position();
 		//this.originalBirdVerticalPosition = oPosition.top,
 
-	 	this.gameLoop();
-
-
 	 },
 
 	
+	 start:function()
+	 {
+		this.splash_screen.hide();
+		this.toolbar.show();
+		this.gameLoop();
+	 },
+
+
+	 restart:function()
+	 {
+	 	this.toolbar.hide();
+	 	this.splash_screen.show();
+	 },
 
 	 gameLoop : function()
 	 {

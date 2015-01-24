@@ -5,7 +5,7 @@ function Tree()
     this.zIndex = 5;
     this.name = "tree";
 
-    this.minY = 500;
+    this.minY = 650;
     this.maxY = 750;
 
 }
