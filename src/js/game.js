@@ -10,6 +10,16 @@ var game =
 	gameObjectList 	: [],
     earthFramesList : [],
 
+	sens : 1,
+	fps : 25,
+	toolbar : undefined,
+	splash_screen : undefined,
+	originalBirdVerticalPosition:0,
+	background:null,
+
+	gameObjectList : [],
+
+
 	 init : function()
 	 {
 	 	this.screen_width 	= $('#screen').width();
@@ -20,23 +30,11 @@ var game =
 	 	this.splash_screen 	= new SplashScreen();
 	 	this.splash_screen.init();
         
-
-		this.generateFrames();
-
+        this.frameHandler = new FrameHandler();
+        this.frameHandler.generateFrames();
 	 },
 
 
-	 generateFrames: function(){
-        for(var i = 1; i <= 10; i++){
-            var scale = 0;
-            if((i-1) % 2 == 1){
-                scale = 1/Math.pow(2, (i)/2 - 1);
-            } else {
-                scale = 5 - i /2;
-            }
-            this.earthFramesList.push(new EarthFrame(scale, 700 - (i+1) * 20));
-        }
-     },
 
 	
 	 start:function()

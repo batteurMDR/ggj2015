@@ -2,6 +2,8 @@ function GameObject()
 {
     this.animable = true;
 	this.id = 0;
+    this.x = undefined;
+    this.y = undefined;
 
     this.setCoordinate=function(x,y)
 	{
@@ -18,7 +20,7 @@ function GameObject()
 	this.generateCoordinate=function()
 	{
         var y = Math.round(Math.random() * (this.maxY - this.minY) + this.minY);
-        var x = Math.round(Math.random() * ($(window).width()));
+        var x = Math.round(Math.random() * ($(window).width() - this.height) + this.height) - this.height;
 
         //console.log('Hey ho... voici mes coord '+x+'y='+y);
 
@@ -27,6 +29,10 @@ function GameObject()
 
      this.animate=function()
      {
+
+     }
+     this.areCoordonateSet = function(){
+        return this.x != undefined && this.y != undefined;
 
      }
 }

@@ -2,7 +2,7 @@
 function Bird()
 {
 
-    this.height = 64;
+    this.height = 39;
     this.width = 64;
     this.zIndex = 10;
     this.name = "bird";
@@ -49,7 +49,7 @@ function Bird()
     this.spriteAnimator = function()
     {
         $('#'+this.id).animateSprite({
-        fps: 8,
+        fps: 25,
         loop: true,
         animations: {
             flap: [0, 1]
