@@ -32,15 +32,19 @@ function Bird()
         var amplitude_verticale = 100;
         var new_y =  this.y +(Math.sin(angle)*amplitude_verticale);
 
-        if(this.x>width)
+        if(this.x>width){
             this.sens=-1;
-        if(this.x<0)
+             $('#'+this.id).css('-webkit-transform', 'scaleX(-1)');
+        }
+        if(this.x<0){
             this.sens = 1;
-
+            $('#'+this.id).css('-webkit-transform', 'scaleX(1)');
+        }
         $('#'+this.id).css(
                 {
                 'left':this.x+'px',
-                'top':new_y+'px'
+                'top':new_y+'px',
+
                 }
                 
             );
