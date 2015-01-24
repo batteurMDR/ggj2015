@@ -18,7 +18,11 @@ var Generator = function(name, frame, posX)
 	            break;
 	        case "clouds":
             case "rain":
-	            return 1;          
+	            return 1; 
+                break;
+            case "chimere":
+                return 1;
+                break;         
         }
     }
 
@@ -42,6 +46,9 @@ var Generator = function(name, frame, posX)
 	            break;  
             case "rain":
                 return new CloudRaindrop();
+                break;
+            case "chimere":
+                return new Chimere();
                 break;
 	    }         
     }
