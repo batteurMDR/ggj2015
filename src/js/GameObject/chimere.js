@@ -23,20 +23,8 @@ function Chimere()
     this.minY = this.frame.maxY-25;
     this.maxY = this.frame.maxY;
     this.sens = -1;
+    this.timer = null;
     Chimere.count++;
-
-    this.animate = function()
-    {
-    	setInterval(function(){
-    		if(this.is==0){
-    			console.log("0");
-    		}else if(this.is==1){
-    			console.log("1");
-    		}else if(this.is==2){
-    			console.log("2");
-    		}
-    	},this.change);
-    }
 
     this.walk = function()
     {
@@ -45,7 +33,7 @@ function Chimere()
     	this.is = 1;
     	$('#'+this.id).css({'height':this.height+'px',"width":this.width+'px'});
         var width = game.screen_width;
-        var vitesse = 90; 
+        var vitesse = 30; 
         this.x = this.x + vitesse * 1/game.fps * this.sens;
         if(this.x>(width-this.width)){
             this.sens= -1;
@@ -63,7 +51,7 @@ function Chimere()
     	this.height = 121;
     	this.width = 144;
     	this.is = 2;
-    	$('#'+this.id).css({'height':this.height+'px',"width":this.width+'px'});
+    	$('#'+this.id).css({'height':this.height+'px',"width":this.width+'px'}).addClass('jump');
     }
 
     this.stay = function()
@@ -71,7 +59,7 @@ function Chimere()
     	this.height = 121;
     	this.width = 145;
     	this.is = 0;
-    	$('#'+this.id).css({'height':this.height+'px',"width":this.width+'px'});
+    	$('#'+this.id).css({'height':this.height+'px',"width":this.width+'px'}).addClass('stay');
     }
 
     this.spriteAnimatorWalk=function()
@@ -119,6 +107,28 @@ function Chimere()
         });
         $('#'+this.id).animateSprite('play', 'jump');
     }
+
+
+
+    this.move = function()
+    {
+    	var that = this;
+    	setInterval(function(){
+    		clearInterval(that.timer);
+    		if(that.is==0){
+    			$('#'+that.id).removeClass('stay');
+    			that.spriteAnimatorWalk();
+    			that.timer = setInterval(that.walk.bind(that),1/that.fps*1000);
+    		}else if(that.is==1){
+    			that.spriteAnimatorJump();
+    			that.timer = setInterval(that.jump.bind(that),1/that.fps*1000);
+    		}else if(that.is==2){
+    			$('#'+that.id).removeClass('jump');
+    			that.spriteAnimatorStay();
+    			that.timer = setInterval(that.stay.bind(that),1/that.fps*1000);
+    		}
+    	},this.change);
+    }
 }
 
 
@@ -129,4 +139,5 @@ Chimere.count = 0;
 Chimere.prototype.addItemToScreen=function()
 {
     GameObject.prototype.addItemToScreen.apply(this);
+    this.move();
 }

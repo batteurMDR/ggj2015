@@ -15,7 +15,6 @@ function Background(backgrounds)
 		if(this.current>(this.count-1)){
 			this.current = 0;
 		}
-		console.log(this.current);
 		$('.background:visible').fadeOut("slow");
 		$('.background[id='+this.current+']').fadeIn("slow");
 	}
