@@ -1,8 +1,5 @@
-function NicePopUP(sTitle,sText)
+function NicePopUP(sTitle,sText,callback)
 {
-	alert('ok');
-	
-	console.log(arguments);
 	$('<div/>',
                 {
                     "class":"nicebox",
@@ -14,7 +11,6 @@ function NicePopUP(sTitle,sText)
 	{
 		$(this).remove();
 	});
-
-	if( arguments.length==3)
-		arguments[2]();
+	if(callback)
+		callback();
 }
