@@ -15,7 +15,7 @@ function Chimere()
     this.frame = game.frameHandler.earthFramesList[0];
 	this.height = 121;
 	this.width  = 145; 
-    this.zIndex = this.frame.id;
+    this.zIndex = 2;
     this.name = "chimere";    
     this.id = "Chimere"+Chimere.count;
     this.minY = this.frame.maxY-25;
@@ -27,16 +27,17 @@ function Chimere()
     {
         var width = game.screen_width;
         var vitesse = 90; 
+        var chimere = $('#'+this.id);
         this.x = this.x + vitesse * 1/game.fps * this.sens;
         if(this.x>(width-this.width)){
             this.sens= -1;
-             $('#'+this.id).css('-webkit-transform', 'scaleX(1)');
+             chimere.css('-webkit-transform', 'scaleX(1)');
         }
         if(this.x<0){
             this.sens = 1;
-            $('#'+this.id).css('-webkit-transform', 'scaleX(-1)');
+            chimere.css('-webkit-transform', 'scaleX(-1)');
         }
-        $('#'+this.id).css({'left':this.x+'px'});
+        chimere[0].style.left=this.x+'px';
     }
 
     this.spriteAnimator=function()

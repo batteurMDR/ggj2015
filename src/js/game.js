@@ -23,11 +23,14 @@ var game =
 
 	gameObjectList : [],
 
-	music : null,
+	sound : {
 
+		fond : null
 
-	 init : function()
-	 {
+	},
+
+	init : function()
+	{
 	 	this.screen_width 	= $('#screen').width();
 	 	this.screen_height 	= $('#screen').height();
 	 	//this.background 	= new Background(["img/backgrounds/ingame2.png","img/backgrounds/ingame3.png"]);
@@ -42,11 +45,11 @@ var game =
         this.frameHandler = new FrameHandler();
         this.frameHandler.generateFrames();
         
-        audio.addElem("music","sounds/music.ogg");
-        this.music = new Sound('music');
-        this.music.loop();
-        this.music.setVolume(20);
-        this.music.play();
+        audio.addElems([["fond","sounds/fond.ogg"]]);
+        this.sound.fond = new Sound('fond');
+        this.sound.fond.loop();
+        this.sound.fond.setVolume(20);
+        this.sound.fond.play();
 
 	 },
 
@@ -105,7 +108,7 @@ var game =
 	 gameLoop : function()
 	 {
 	 	this.timer_renderer = setInterval(this.animate.bind(this),1/this.fps*1000);
-   	 	
+   	 	this.timer_colision_detector = setInterval(this.colision_detector.bind(this),400);
     },
 
 	 animate : function()
@@ -120,19 +123,39 @@ var game =
             }
 	 	}
 	 },
-	 detectSeedGrowth: function(gameObject)
+
+	 colision_detector:function()
 	 {
-	
-            for(var key in this.treeGameObjectList){
-            	if(this.treeGameObjectList[key].animable){
-                	if(gameObject.x + gameObject.width >= this.treeGameObjectList[key].x && gameObject.x < this.treeGameObjectList[key].x + this.treeGameObjectList[key].width){
-                    
-                    setTimeout(function(){
-                        game.treeGameObjectList[key].spriteAnimator( game.treeGameObjectList[key].id);
-                    }, 10000);
-					}
-                }
+	 	for(var oGameObject in this.gameObjectList )
+	 	{
+            var gameObject = this.gameObjectList[oGameObject];
+         
+            if(gameObject.animable){
+        
+	 		    if(gameObject.id.substr(0,9)=='CloudRain')
+	 		    	this.detectSeedGrowth(gameObject);
             }
+	 	}
+	 },
+
+
+	 detectSeedGrowth: function(oCloudRain)
+	 {
+        for(var key in this.treeGameObjectList)
+        {
+        	if(this.treeGameObjectList[key].animable)
+        	{
+        		var seed = this.treeGameObjectList[key];
+
+            	if(seed.x> oCloudRain.x &&  seed.x + seed.width < oCloudRain.x + oCloudRain.width){
+                
+	                setTimeout(function(){
+	                	//console.log('On anime la graine='+seed.id);
+	                    seed.spriteAnimator();
+	                }, 1000);
+				}
+            }
+        }
         
 	 },
 

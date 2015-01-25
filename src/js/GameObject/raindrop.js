@@ -11,16 +11,18 @@ function Raindrop(cloud){
     
     this.animate = function(){
         if(!this.oDOMElementRainDrop)
-            this.oDOMElementRainDrop = $('#'+this.id);
+            this.oDOMElementRainDrop = $('#'+this.id)[0];
 
-        if(this.y > game.screen_height){
+        if(this.y >= game.screen_height){
             cloud.getCoordinate();
             this.x = parseInt(Math.random() * (cloud.Xmax - cloud.Xmin) + cloud.Xmin);
             this.y = parseInt(Math.random() * (cloud.Ymax - cloud.Ymin) + cloud.Ymin);
             
         }
-        this.y+= this.vitesse;
-        this.oDOMElementRainDrop.offset({top: this.y, left: this.x}); 
+        else
+            this.y+= this.vitesse;
+        this.oDOMElementRainDrop.style.left=this.x+'px';
+        this.oDOMElementRainDrop.style.top=this.y+'px';
     }
     
     Raindrop.Count++;
