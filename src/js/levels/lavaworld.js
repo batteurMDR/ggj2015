@@ -13,9 +13,12 @@ function LevelLavaWorld()
 											,1000);
 		game.background.init();
 
-		this.showLevelTitle(this.prepareUserInterface.bind(this));
-		game.toolbar.show();
-
+		//this.showLevelTitle(this.prepareUserInterface.bind(this));
+		//game.toolbar.show();
+        $('.btn.water').click(function(){
+           NicePopUP("I should have thought that water will evaporate...", "How could I empty those clouds?", game.levelmanager.nextLevel());
+          $(this).hide();  
+        });
 
 	}
 

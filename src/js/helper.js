@@ -10,7 +10,7 @@ function NicePopUP(sTitle,sText)
 	$('<div/>',{"class":"nicebox","data-depth":1.0}).appendTo($('#screen')).html('<h1>'+sTitle+'</h1><p>'+sText+'</p>').click(function(e){
 		e.preventDefault();
 		$(this).remove();
-		self.exec();	
+        self.exec();	
 	});
 
 	this.exec=function(){

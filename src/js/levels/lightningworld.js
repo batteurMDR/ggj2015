@@ -1,8 +1,8 @@
-function LevelWaterWorld()
+function LevelLightingWorld()
 {
 	this.init = function()
 	{
-		this.title = "The Water World";
+		this.title = "The Lightning";
 
 		//game.background.destroy();
 		game.background = new Background([
@@ -25,26 +25,24 @@ function LevelWaterWorld()
 	{
 		var scr = $('#background_0');
 		var self = this;
-		$('<img/>',{"class":"waterworld item_lightning skill", "src":"img/levels/lightning.png"}).insertBefore(scr).click(function(e){
-			e.preventDefault();
-			this.remove();
-			//$('.item_water').remove();
-			//self.youWin();
-            $('.btn.lightning').css('background-image', "url(img/levels/lightning.png)");
-            self.youWin();
+            $('.btn.lightning').click(function(){
+                
+                $(this).hide();
+                self.youWin();
+            });
            
-		});
+		
 	}
     this.youWin = function(){
-        NicePopUP("Maybe that ...thing... I got will pierce them?","What about a try?", game.levelmanager.nextLevel());
+        NicePopUP("It worked! It's raining","", NicePopUP("Life is coming out of nowhere! But why does the grass appear first?","I maybe shouldn't have skipped the bio courses at God's college...", game.levelmanager.nextLevel()));
     }
 	
 	
 }
 
-LevelWaterWorld.prototype =new Level();
+LevelLightingWorld.prototype =new Level();
 
-LevelWaterWorld.prototype.youLoose = function()
+LevelLightingWorld.prototype.youLoose = function()
 {
 	NicePopUP("This is not the begining",
 			"Water isn't the begining",null);

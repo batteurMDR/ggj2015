@@ -26,7 +26,10 @@ function LevelDarkWorld()
 			//self.youWin();
             $('.btn.fire').css('background-image', "url(img/levels/fire.png)").on("click", function(){
                 e.preventDefault();
-                self.youWin();
+                if($('.skill').length != 0)
+                    NicePopUP("I'd like to learn as many skills I can.","No one knows what tomorrow will be about");
+                else
+                    self.youWin();
             });
 		});
 		$('<img/>',{"class":"darkworld item_water skill", "src":"img/levels/water.png"}).appendTo(scr).click(function(e){
@@ -58,7 +61,7 @@ function LevelDarkWorld()
 
 	this.youWin = function()
 	{
-		NicePopUP("**WIN MSG**","ici",game.levelmanager.nextLevel());
+		NicePopUP("Wake the Earth up! Fire the volcanoes!"," I will crush everything with lava!",NicePopUP("Hum... Well. Maybe I got a bit too excited... ","How about pouring some water to cool things down",game.levelmanager.nextLevel()));
         $('.btn.fire').hide();
 	}
 	
