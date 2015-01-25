@@ -29,8 +29,8 @@ var game =
 
 	},
 
-	 init : function()
-	 {
+	init : function()
+	{
 	 	this.screen_width 	= $('#screen').width();
 	 	this.screen_height 	= $('#screen').height();
 	 	//this.background 	= new Background(["img/backgrounds/ingame2.png","img/backgrounds/ingame3.png"]);
@@ -45,7 +45,7 @@ var game =
         this.frameHandler = new FrameHandler();
         this.frameHandler.generateFrames();
         
-        audio.addElem("fond","sounds/fond.ogg");
+        audio.addElems([["fond","sounds/fond.ogg"],["test","sounds/test.ogg"]]);
         this.sound.fond = new Sound('fond');
         this.sound.fond.loop();
         this.sound.fond.setVolume(20);
