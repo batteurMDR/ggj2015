@@ -17,21 +17,23 @@ function LevelDarkWorld()
 
 	this.prepareUserInterface = function()
 	{
-		$('.nicebox').fadeOut(300);
+		/**
 		var sHTML = '<div class="darkworld item_fire" onclick="LevelDarkWorld.finished();">Fire</div>'+
 					'<div class="darkworld item_water"  onclick="LevelDarkWorld.youLoose();">Water</div>';
 
 		
 		$('#screen')[0].innerHTML+=sHTML;
+		*/
+		var scr = $('#screen');
+		$('<div/>',{"class":"darkworld item_fire"}).text('Fire').appendTo(scr);
+		$('<div/>',{"class":"darkworld item_water"}).text('Water').appendTo(scr).hover(function(){
+			console.log("ok");
+		});
 	}
 
 	this.showInstruction = function()
 	{
-		NicePopUP("You are god.... and you can create the world as you want !",
-				'What\'s your desire ?',null);
-		
-		
-		setTimeout(this.prepareUserInterface.bind(this),2000);
+		NicePopUP("You are god.... and you can create the world as you want !",'What\'s your desire ?',this.prepareUserInterface.bind(this));
 	}
 
 	
