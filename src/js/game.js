@@ -25,7 +25,57 @@ var game =
 
 	sound : {
 
-		fond : null
+		fond : null,
+
+		getitem : null,
+
+		fire : null,
+
+		water : null,
+
+		lava : null,
+
+		lightning : null,
+
+		rain : null,
+
+		transition : null,
+
+		bird : null,
+
+		wind : null,
+
+		voice : {
+
+			intro : null,
+
+			intros : null,
+
+			firehover : null,
+
+			waterhover : null,
+
+			fireclick : null,
+
+			fireclicks : null,
+
+			waterclickw : null,
+
+			waterclickt : null,
+
+			lightninghover : null,
+
+			grass : null,
+
+			raining : null,
+
+			seedhover : null,
+
+			seedclick : null,
+
+			creature : null
+
+		}
 
 	},
 
@@ -45,7 +95,45 @@ var game =
         this.frameHandler = new FrameHandler();
         this.frameHandler.generateFrames();
         
-        audio.addElems([["fond","sounds/fond.ogg"]]);
+        audio.addElems([
+        	["fond","sounds/fond.ogg"],
+        	["getitem","sounds/getitem.ogg"],
+        	["fire","sounds/fire.ogg"],
+        	["water","sounds/water.ogg"],
+        	["lava","sounds/lava.ogg"],
+        	["lightning","sounds/lightning.ogg"],
+        	["rain","sounds/rain.ogg"],
+        	["transition","sounds/transition.ogg"],
+        	["bird","sounds/bird.ogg"],
+        	["wind","sounds/wind.ogg"],
+
+        	["vintro","sounds/voices/1_1.ogg"],
+        	["vintros","sounds/voices/1_1.ogg"],
+
+        	["vfirehover","sounds/voices/2_1.ogg"],
+        	["vwaterhover","sounds/voices/2_2.ogg"],
+        	["vfireclick","sounds/voices/2_3.ogg"],
+        	["vwaterclickw","sounds/voices/2_4.ogg"],
+        	["vfireclicks","sounds/voices/2_5.ogg"],
+
+        	["vwaterclickt","sounds/voices/3_1.ogg"],
+
+        	["vlightninghover","sounds/voices/4_1.ogg"],
+        	["vlightningclick","sounds/voices/4_2.ogg"],
+
+        	["vgrass","sounds/voices/5_1.ogg"],
+
+        	["vraining","sounds/voices/6_1.ogg"],
+
+        	["vseedhover","sounds/voices/7_1.ogg"],
+        	["vseedclick","sounds/voices/7_2.ogg"],
+
+
+        	["vcreature","sounds/voices/8_1.ogg"],
+
+        	["voutro","sounds/voices/9_1.ogg"],
+
+        ]);
         this.sound.fond = new Sound('fond');
         this.sound.fond.loop();
         this.sound.fond.setVolume(20);
