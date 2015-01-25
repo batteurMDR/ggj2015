@@ -6,7 +6,7 @@ function LevelDarkWorld()
 		this.title = "The Dark World";
 
 		//game.background.destroy();
-		game.background = new Background(["img/backgrounds/level_darkworld/darkworld_background.png"]);
+		game.background = new Background(["img/backgrounds/level_darkworld/darkworld_background.png"], "darkworld");
 		game.background.init();
 
 		this.showLevelTitle(this.showInstruction.bind(this));
@@ -50,20 +50,27 @@ function LevelDarkWorld()
 
 	this.showInstruction = function()
 	{
+        NicePopUP("As a god, I learned that I just have to click on  a caps containing a skill to acquire it.","As I often think, you will often see windows like this one, just click on it to let the thought go", this.begin.bind(this));
+        
+        
+    }
+    this.begin=function(){
         NicePopUP("I just got a world to play with.",'My mentor adviced me to destroy everything here to begin on a good basis.',this.prepareUserInterface.bind(this));
 		//NicePopUP("You are god.... and you can create the world as you want !",'What\'s your desire ?',this.prepareUserInterface.bind(this));
 	}
 
 	this.youLoose = function()
 	{
-		NicePopUP("All stories tell about survivors of this.","And I don't really want to deal with this barbarians.");
+		NicePopUP("All stories tell about survivors of downpour.","And I don't really want to deal with this barbarians.");
 	}
 
 	this.youWin = function()
 	{
+        game.background.destroy();
 		NicePopUP("Wake the Earth up! Fire the volcanoes!"," I will crush everything with lava!",function(){
 			NicePopUP("Hum... Well. Maybe I got a bit too excited... ","How about pouring some water to cool things down",game.levelmanager.nextLevel());
 		});
+        $('.btn.water').off('click'); 
         $('.btn.fire').hide();
 	}
 	

@@ -1,7 +1,7 @@
 function LevelManager()
 {
 
-    this.nCurrentLevel = 5;
+    this.nCurrentLevel = 1;
 	this.level = null;
 
 	/*Gere les enchainements de levels*/
@@ -34,10 +34,9 @@ function LevelManager()
 	}
 
 	this.nextLevel=function(){
-		this.destroyLevel();
+		//this.destroyLevel();
 		this.nCurrentLevel++;
-		this.level = this.getLevel();
-		this.level.init();
+		this.init();
 	}
 
 	this.destroyLevel=function(){

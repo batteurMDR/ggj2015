@@ -45,9 +45,13 @@ function Level()
 
 	}
 
-	this.destroy = function(){
+	this.destroy = function(nameLevel){
 		var toolbar = $("#toolbar");
-        $("#screen").empty().append(toolbar);
+		console.log("deleting backgrounds for "+nameLevel);
+        	$(".background."+nameLevel).each(function(){
+			console.log($(this));
+			$(this).remove();
+		});
        
 	}
 }

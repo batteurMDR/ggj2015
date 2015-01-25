@@ -64,6 +64,7 @@ function LevelTreeWorld()
 	}
 	
     this.youWin = function(){
+        game.background.destroy();
         NicePopUP("","",game.levelmanager.nextLevel());
         
     }

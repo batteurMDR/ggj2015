@@ -34,6 +34,7 @@ function LevelLightingWorld()
 		
 	}
     this.youWin = function(){
+        game.background.destroy();
         NicePopUP("It worked! It's raining","", NicePopUP("Life is coming out of nowhere! But why does the grass appear first?","I maybe shouldn't have skipped the bio courses at God's college...", game.levelmanager.nextLevel()));
     }
 	

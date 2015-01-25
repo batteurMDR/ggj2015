@@ -10,7 +10,8 @@ function LevelWaterWorld()
 											"img/backgrounds/level_waterworld/lava5.png",
 											"img/backgrounds/level_waterworld/lava6.png",
 											"img/backgrounds/level_waterworld/lava7.png",
-											]
+											],
+                                            "waterworld"
 											,3000);
 		game.background.init();
         game.toolbar.show();
@@ -36,6 +37,7 @@ function LevelWaterWorld()
 		});
 	}
     this.youWin = function(){
+        game.background.destroy();
         NicePopUP("Maybe that ...thing... I got will pierce them?","What about a try?", game.levelmanager.nextLevel());
     }
 	

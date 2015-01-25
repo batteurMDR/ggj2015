@@ -1,18 +1,25 @@
-function Background(backgrounds,timing)
+function Background(backgrounds, currentLevel,timing)
 {
+    if(timing ==undefined)
+        timing = 5000;
 	this.timing = timing;
 	this.backgrounds = backgrounds;
 	this.count = this.backgrounds.length;
 	this.nCurrentBackgroundIndex = 0;
 	this.interval = null;
-
-	for (var i = 0; i < this.count; i++) {
-		$('<div/>',
-					{"class":"background","id":'background_'+i})
+    this.currentLevel = currentLevel;
+	//console.log(this.currentLevel);
+    for (var i = 0; i < this.count; i++) {
+		var div = $('<div/>',
+					{"class":"background "+currentLevel,"id":'background_'+i})
 					.css("background","url("+this.backgrounds[i]+")")
 					.css("z-index", 0)
                     .hide()
-					.appendTo($('#screen'));
+                	.appendTo($('#screen'));    
+                    if(i == 0)
+                        div.show();
+
+				
 	}
 
 	this.next=function(){
@@ -20,21 +27,29 @@ function Background(backgrounds,timing)
 		if(this.current>this.count-1){
 			this.current = 0;
 		}
-		$('.background:visible').fadeOut("slow");
-		$('#background_'+this.current).fadeIn("slow");
+		$('#background_'+this.current).fadeIn({duration:timing});
+        $('.background.'+this.currentLevel+':visible').fadeOut({duration:timing, complete: this.next.bind(this)});
+		
 	}
 
 	this.init=function(){
-		$('.background:first').fadeIn("fast");
+		$('.background:first').fadeIn(timing);
 		$('#screen').css("background","#000");
 		this.current = 0;
-		this.interval = setInterval(this.next.bind(this),this.timing);
+		//this.interval = setInterval(this.next.bind(this),this.timing);
+        this.next();
 	}
 
 	this.destroy=function()
 	{
-
+       // console.log("destroying Background");
+        $('.background.'+this.currentLevel+':visible').attr('id', 'azd').stop().fadeOut({
+            duration:100, 
+            complete:this.destroyLevelBackground.bind(this)
+        });
 	}
-
+    this.destroyLevelBackground=function(){
+        game.levelmanager.level.destroy(this.currentLevel);
+    }
 }
 
