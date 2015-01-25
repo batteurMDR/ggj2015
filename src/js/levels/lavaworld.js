@@ -4,29 +4,35 @@ function LevelLavaWorld()
 	{
 		this.title = "The Lava World";
 
-		//game.background.destroy();
+		//$('#screen').css("background-image", "url(img/backgrounds/ingame.png)");
 		game.background = new Background([
 											"img/backgrounds/level_lavaworld/lava0.png",
 											"img/backgrounds/level_lavaworld/lava1.png",
 											"img/backgrounds/level_lavaworld/lava3.png"
 											],
-                                            "lavaworld"
-											,1000);
+                                            "lavaworld",
+                                            true,
+											1000);
 		game.background.init();
 
 		//this.showLevelTitle(this.prepareUserInterface.bind(this));
 		//game.toolbar.show();
 
+
 		game.sound.voice.waterclickt = new Sound("vwaterclickt");
 		game.sound.rain = new Sound("rain");
 
+        
+
+           
+           
+
+
+		var self = this;
         $('.btn.water').click(function(){
-           game.background.destroy();
-           game.sound.voice.waterclickt.play();
-           game.sound.rain.play();
-           NicePopUP("I should have thought that water will evaporate...", "How could I empty those clouds?", game.levelmanager.nextLevel());
-          $(this).hide();  
-            
+            game.sound.voice.waterclickt.play();
+            $(this).hide(); 
+            self.youWin();
         });
 
 	}
@@ -37,7 +43,12 @@ function LevelLavaWorld()
 		
 	}
 
-	
+	this.youWin = function ()
+	{
+		game.background.destroy();
+        NicePopUP("I should have thought that water will evaporate...", "How could I empty those clouds?", game.levelmanager.nextLevel.bind(game.levelmanager));
+          
+	}
 	
 }
 

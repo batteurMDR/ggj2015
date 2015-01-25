@@ -27,7 +27,8 @@
 	width:40px;
 	height:40px;
 	margin:5px;
-	background-color:rgba(50,50,255,1);
+	background-color:rgba(50,50,50,1);
+	border:solid 1px #444;
 	float:left;
 	border-radius:3px;
 	box-shadow: 1px 1px 5px rgba(0,0,0,0.6);
@@ -38,7 +39,7 @@
 
 .btn:hover
 {
-	background-color:rgba(80,80,255,1);
+	background-color:rgba(80,80,80,1);
 }
 
 .btn .label

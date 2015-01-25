@@ -5,6 +5,8 @@
 	height: 30%;*/
 	background-color:rgba(128,0,0,0.8);
 	margin:10%;
+	cursor: pointer;
+
 }
 .darkworld.item_water
 {
@@ -12,7 +14,8 @@
 	/*width:30%;
 	height: 30%;*/
 	background-color:rgba(0,0,128,0.8);
-	margin:10%;
+	margin:20% 0 0 25%;
+	cursor: pointer;
 }
 .skill{
     height: 50px;
@@ -22,4 +25,5 @@
     position: fixed;
     z-index: 20;
     top: 50px;
+    position: absolute;;
 }
