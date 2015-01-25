@@ -4,7 +4,7 @@ function LevelLavaWorld()
 	{
 		this.title = "The Lava World";
 
-		//game.background.destroy();
+		//$('#screen').css("background-image", "url(img/backgrounds/ingame.png)");
 		game.background = new Background([
 											"img/backgrounds/level_lavaworld/lava0.png",
 											"img/backgrounds/level_lavaworld/lava1.png",
@@ -17,11 +17,11 @@ function LevelLavaWorld()
 
 		//this.showLevelTitle(this.prepareUserInterface.bind(this));
 		//game.toolbar.show();
+		var self = this;
         $('.btn.water').click(function(){
-           game.background.destroy();
-           NicePopUP("I should have thought that water will evaporate...", "How could I empty those clouds?", game.levelmanager.nextLevel());
-          $(this).hide();  
             
+            $(this).hide(); 
+            self.youWin();
         });
 
 	}
@@ -32,7 +32,12 @@ function LevelLavaWorld()
 		
 	}
 
-	
+	this.youWin = function ()
+	{
+		game.background.destroy();
+        NicePopUP("I should have thought that water will evaporate...", "How could I empty those clouds?", game.levelmanager.nextLevel.bind(game.levelmanager));
+          
+	}
 	
 }
 

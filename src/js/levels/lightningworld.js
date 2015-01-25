@@ -16,7 +16,7 @@ function LevelLightingWorld()
                 .fadeIn({
                         duration:2000,
                     });
-var div = $('<div/>',
+      var div = $('<div/>',
 		    {"class":"background lightningworld"})
 				.css("background-color","black")
 				.css("z-index", 1)
@@ -26,8 +26,8 @@ var div = $('<div/>',
                 
                  
 
-		game.background.init();
-        game.toolbar.show();
+		//game.background.init();
+    //game.toolbar.show();
 		this.showLevelTitle(this.prepareUserInterface.bind(this));
 		//game.toolbar.show();
 
@@ -89,13 +89,37 @@ var div = $('<div/>',
                     });
                }, Math.random()* 1000);
        }else{
-           setTimeout(self.youWin, 5000);
+           setTimeout(self.showRain.bind(self), 3000);
        }
     }
+
     this.youWin = function(){
        game.background.destroy();
-        NicePopUP("It worked! It's raining","", NicePopUP("Life is coming out of nowhere! But why does the grass appear first?","I maybe shouldn't have skipped the bio courses at God's college...", game.levelmanager.nextLevel()));
+       console.log("bla");
+        NicePopUP("It worked! It's raining","", 
+          //NicePopUP("Life is coming out of nowhere! But why does the grass appear first?","I maybe shouldn't have skipped the bio courses at God's college...",
+           game.levelmanager.nextLevel.bind(game.levelmanager)
+          // )
+          );
     }
+
+
+  this.showRain = function()
+  {
+    game.background.destroy();
+        game.background = new Background([
+                      "img/backgrounds/level_waterworld/rain0.png",
+                      "img/backgrounds/level_waterworld/rain1.png",
+                      "img/backgrounds/level_waterworld/rain2.png"
+                      ],
+                      "lightningworld"
+                      ,true
+                      ,300
+                      );
+        game.background.init();
+        setTimeout(this.youWin.bind(this), 5000);
+  }
+
 	
 	
 }

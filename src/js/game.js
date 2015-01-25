@@ -75,6 +75,7 @@ var game =
 	 {
 		this.splash_screen.hide();
 		$('#cloudscontainer').hide();
+		//$('#screen')[0].style.background='#000';
 
 		this.levelmanager = new LevelManager();
 		this.levelmanager.init();
