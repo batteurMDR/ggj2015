@@ -8,6 +8,7 @@ var game =
 	screen_width	: 0,
 	parallax 		: undefined,
 	dnd 			: null,
+	levelmanager    : null,
 
     treeGameObjectList: [],
     cloudGameObjectList: [],
@@ -21,6 +22,8 @@ var game =
 	background:null,
 
 	gameObjectList : [],
+
+	music : null,
 
 
 	 init : function()
@@ -39,11 +42,15 @@ var game =
         this.frameHandler = new FrameHandler();
         this.frameHandler.generateFrames();
         
+        audio.addElem("music","sounds/music.ogg");
+        this.music = new Sound('music');
+        this.music.setVolume(20);
+        this.music.play();
 
 	 },
 
 
-	 parallax:function()
+	 parallaxLauncher:function()
 	 {
 	 	var scene = document.getElementById('screen');
 		this.parallax = new Parallax(scene,
@@ -69,7 +76,7 @@ var game =
 		this.levelmanager.init();
 
 
-		this.parallax();
+		this.parallaxLauncher();
 		this.gameLoop();
 	 },
 

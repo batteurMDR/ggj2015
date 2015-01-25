@@ -14,8 +14,35 @@ function LevelTreeWorld()
 		game.background.init();*/
 
 		this.showLevelTitle(this.prepareUserInterface.bind(this));
-		//game.toolbar.show();
+		game.toolbar.show();
+		this.parallax_pictures	=	[
+									{
+										x		: 0,
+										y		: 0,
+										img_src	: 'img/backgrounds/level_treeworld/slice1.png',
+										depth 	: 1.0,
+										zIndex	: 3
+									},
+									{
+										x		: 900,
+										y		: 250,
+										img_src	: 'img/backgrounds/level_treeworld/slice2.png',
+										depth 	: 0.7,
+										zIndex	: 2
+									},
+									{
+										x		: 700,
+										y		: 400,
+										img_src	: 'img/backgrounds/level_treeworld/slice3.png',
+										depth 	: 0.5,
+										zIndex	: 1
+									}
+								];
 
+		var parallaxGenerator = new ParallaxSliceGenerator(this.parallax_pictures);
+		parallaxGenerator.generate();
+		game.parallaxLauncher();
+		game.parallax_update();
 
 	}
 
