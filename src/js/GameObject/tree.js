@@ -32,7 +32,7 @@ function Tree(frame, posX)
     }
 
 
-    this.spriteAnimator = function(id)
+    this.spriteAnimator = function()
     {
         var sprite_sequence = new Array();
         for(var i = 0; i < 60; i++)
@@ -40,7 +40,7 @@ function Tree(frame, posX)
             sprite_sequence.push(i);
         }
 
-        $('#'+id).animateSprite({
+        $('#'+this.id).animateSprite({
             fps: 15,
             loop: false,
             animations: {
@@ -50,7 +50,7 @@ function Tree(frame, posX)
             complete: function(){
             }
         });
-        $('#'+id).animateSprite('play', 'grow');
+        $('#'+this.id).animateSprite('play', 'grow');
         this.animable = false;
     }
 }
