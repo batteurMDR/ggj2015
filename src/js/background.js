@@ -59,6 +59,9 @@ function Background(backgrounds, currentLevel, boucle, timing)
 	this.destroy=function()
 	{
        // console.log("destroying Background");
+       $('.background.'+this.currentLevel).each(function(){
+            $(this).stop();  
+       });
         $('.background.'+this.currentLevel+':visible').attr('id', 'azd').stop().css('z-index', 0).fadeOut({
             duration:500, 
             complete:this.destroyLevelBackground.bind(this)
