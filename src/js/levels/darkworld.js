@@ -61,7 +61,9 @@ function LevelDarkWorld()
 
 	this.youWin = function()
 	{
-		NicePopUP("Wake the Earth up! Fire the volcanoes!"," I will crush everything with lava!",NicePopUP("Hum... Well. Maybe I got a bit too excited... ","How about pouring some water to cool things down",game.levelmanager.nextLevel()));
+		NicePopUP("Wake the Earth up! Fire the volcanoes!"," I will crush everything with lava!",function(){
+			NicePopUP("Hum... Well. Maybe I got a bit too excited... ","How about pouring some water to cool things down",game.levelmanager.nextLevel());
+		});
         $('.btn.fire').hide();
 	}
 	
