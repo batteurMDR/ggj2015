@@ -12,7 +12,6 @@ function LevelDarkWorld()
 		this.showLevelTitle(this.showInstruction.bind(this));
 		//game.toolbar.show();
 
-
 	}
 
 
