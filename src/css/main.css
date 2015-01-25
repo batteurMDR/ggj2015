@@ -27,3 +27,10 @@ body, html
     user-select: none;
 }
 
+.audio{
+	display: none;
+}
+
+.draggable{
+	cursor: move!important;
+}

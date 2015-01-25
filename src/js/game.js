@@ -23,11 +23,14 @@ var game =
 
 	gameObjectList : [],
 
-	music : null,
+	sound : {
 
+		fond : null
 
-	 init : function()
-	 {
+	},
+
+	init : function()
+	{
 	 	this.screen_width 	= $('#screen').width();
 	 	this.screen_height 	= $('#screen').height();
 	 	//this.background 	= new Background(["img/backgrounds/ingame2.png","img/backgrounds/ingame3.png"]);
@@ -42,11 +45,11 @@ var game =
         this.frameHandler = new FrameHandler();
         this.frameHandler.generateFrames();
         
-        audio.addElem("music","sounds/music.ogg");
-        this.music = new Sound('music');
-        this.music.loop();
-        this.music.setVolume(20);
-        this.music.play();
+        audio.addElems([["fond","sounds/fond.ogg"]]);
+        this.sound.fond = new Sound('fond');
+        this.sound.fond.loop();
+        this.sound.fond.setVolume(20);
+        this.sound.fond.play();
 
 	 },
 

@@ -6,6 +6,12 @@ var audio = {
 			"id"       : id,
 			"controls" : true
 		}).appendTo($('.audio')).hide();
+	},
+
+	addElems : function(sounds){
+		for (var i = 0; i < sounds.length; i++) {
+			this.addElem(sounds[i][0],sounds[i][1]);
+		}
 	}
 }
 function Sound(id)

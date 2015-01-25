@@ -4,6 +4,10 @@ function LevelTreeWorld()
 	{
 		this.title = "The Tree World";
 
+
+		game.background = new Background(["img/backgrounds/background0.png"], "treeworld");
+		game.background.init();
+
 		//game.background.destroy();
 		/*game.background = new Background([
 											"img/backgrounds/level_lavaworld/lava0.png",
@@ -64,7 +68,6 @@ function LevelTreeWorld()
 	}
 	
     this.youWin = function(){
-        game.background.destroy();
         NicePopUP("","",game.levelmanager.nextLevel());
         
     }
