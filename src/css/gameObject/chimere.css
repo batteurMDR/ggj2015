@@ -2,12 +2,4 @@
     background-image: url('../../img/gameObject/Chimere/animal_walk.png');
     width:145px;
     height:121px;
-}.item.chimere.jump{
-    background-image: url('../../img/gameObject/Chimere/animal_jump.png');
-    width:145px;
-    height:121px;
-    }.item.chimere.stay{
-    background-image: url('../../img/gameObject/Chimere/animal_stay.png');
-    width:145px;
-    height:121px;
 }
