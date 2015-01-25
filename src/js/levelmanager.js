@@ -1,6 +1,6 @@
 function LevelManager()
 {
-	this.nCurrentLevel = 3;
+	this.nCurrentLevel = 1;
 	/*Gere les enchainements de levels*/
 	this.init = function()
 	{
