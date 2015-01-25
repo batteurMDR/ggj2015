@@ -22,6 +22,8 @@ var game =
 
 	gameObjectList : [],
 
+	music : null,
+
 
 	 init : function()
 	 {
@@ -39,6 +41,10 @@ var game =
         this.frameHandler = new FrameHandler();
         this.frameHandler.generateFrames();
         
+        audio.addElem("music","sounds/music.ogg");
+        this.music = new Sound('music');
+        this.music.setVolume(20);
+        this.music.play();
 
 	 },
 
