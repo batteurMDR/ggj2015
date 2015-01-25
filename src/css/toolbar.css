@@ -2,7 +2,7 @@
 #toolbar
 {
 	height: 50px;
-	width:50%;
+	width:55%;
 	left:25%;
 	background-color:rgba(255,255,255,0.2);
 	position:absolute;
@@ -14,6 +14,10 @@
 }
 
 #btn_restart
+{
+	float:right;
+}
+#btn_credits
 {
 	float:right;
 }

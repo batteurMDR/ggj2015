@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="css/gameObject/tree.css">  
         <link rel="stylesheet" href="css/gameObject/chimere.css">       
         <link rel="stylesheet" href="css/nicebox.css" />
+        <link rel="stylesheet" href="css/credits.css" />
 
         <!-- Levels : CSS--> 
         <link rel="stylesheet" href="css/level/darkworld.css" />
@@ -43,6 +44,7 @@
         <script src="js/framehandler.js"></script>
         <script src="js/background.js"></script>
         <script src="js/GameObject/raindrop.js"></script>
+        <script src="js/credits.js"></script>
         <script src="js/audio.js"></script>
         <script src="js/game.js"></script>
         <script src="js/earthframe.js"></script>
@@ -82,8 +84,12 @@
              <div class="btn empty seed"></div> 
              <div class="btn chimere animated bounce" data-title-btn="chimere"><div class="label">Chimère</div></div>
 
+            <div class="btn" id="btn_credits" onclick="credits.init();"><div class="label">Crédits</div></div>
             <div class="btn" id="btn_restart" onclick="game.restart();"><div class="label">Restart</div></div>
-        </div>        
+        </div>    
+        <div id="credits" style="display:none;">
+            <button onclick="credits.exit();">Restart</button>
+        </div>    
     </div>
     <div class="audio"></div>
     <script src="js/vendor/parallax/parallax.js"></script>

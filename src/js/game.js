@@ -49,8 +49,6 @@ var game =
 
 			intro : null,
 
-			intros : null,
-
 			firehover : null,
 
 			waterhover : null,
@@ -64,6 +62,8 @@ var game =
 			waterclickt : null,
 
 			lightninghover : null,
+
+			lightningclick : null,
 
 			grass : null,
 
@@ -108,7 +108,6 @@ var game =
         	["wind","sounds/wind.ogg"],
 
         	["vintro","sounds/voices/1_1.ogg"],
-        	["vintros","sounds/voices/1_1.ogg"],
 
         	["vfirehover","sounds/voices/2_1.ogg"],
         	["vwaterhover","sounds/voices/2_2.ogg"],
