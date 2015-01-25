@@ -49,10 +49,24 @@ function LevelTreeWorld()
 
 	this.prepareUserInterface = function()
 	{
-		
+        var scr = $('#screen');
+    	var test = this;
+		$('<img/>',{"class":"treeworld item_seed skill", "src":"img/Toolbar/seeds.jpg"}).appendTo(scr).click(function(e){
+			e.preventDefault();
+			this.remove();
+			//$('.item_water').remove();
+			//self.youWin();
+            $('.btn.fire').css('background-image', "url(img/Toolbar/seed.jpg)");
+            test.youWin();
+           
+		});
+
 	}
 	
-	
+    this.youWin = function(){
+        NicePopUP("","",game.levelmanager.nextLevel());
+        
+    }
 }
 
 LevelTreeWorld.prototype =new Level();

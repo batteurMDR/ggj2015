@@ -5,7 +5,7 @@ var audio = {
 			"src"      : src,
 			"id"       : id,
 			"controls" : true
-		}).appendTo($('.audio'));
+		}).appendTo($('.audio')).hide();
 	}
 }
 function Sound(id)

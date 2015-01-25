@@ -11,7 +11,7 @@ var game =
 	levelmanager    : null,
 
     treeGameObjectList: [],
-    cloudGameObjectList: [],
+  
 	gameObjectList 	: [],
     earthFramesList : [],
 
@@ -105,7 +105,7 @@ var game =
 	 gameLoop : function()
 	 {
 	 	this.timer_renderer = setInterval(this.animate.bind(this),1/this.fps*1000);
-   	 	this.timer2_renderer = setInterval(this.animate2.bind(this),1/this.fps*3000);
+   	 	
     },
 
 	 animate : function()
@@ -120,14 +120,6 @@ var game =
             }
 	 	}
 	 },
-    animate2 : function(){
-        for(var i = 0; i++ < this.cloudGameObjectList;){
-        	if(this.cloudGameObjectList[i] instanceof CloudRaindrop){
-                this.detectSeedGrowth(this.cloudGameObjectList[i]);
-            }
-            this.cloudGameObjectList[i].animate();
-        }
-    },
 	 detectSeedGrowth: function(gameObject)
 	 {
 	

@@ -21,4 +21,5 @@
     border: 2px solid #AAA;
     position: fixed;
     z-index: 20;
+    top: 50px;
 }
