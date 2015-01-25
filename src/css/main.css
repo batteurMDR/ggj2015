@@ -30,3 +30,7 @@ body, html
 .audio{
 	display: none;
 }
+
+.draggable{
+	cursor: move!important;
+}

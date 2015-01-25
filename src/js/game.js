@@ -45,7 +45,7 @@ var game =
         this.frameHandler = new FrameHandler();
         this.frameHandler.generateFrames();
         
-        audio.addElems([["fond","sounds/fond.ogg"],["test","sounds/test.ogg"]]);
+        audio.addElems([["fond","sounds/fond.ogg"]]);
         this.sound.fond = new Sound('fond');
         this.sound.fond.loop();
         this.sound.fond.setVolume(20);
