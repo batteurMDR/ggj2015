@@ -2,7 +2,7 @@
 {
 	background-color: rgba(80,80,80,0.8);
 	color:#FFF;
-	border-radius: 2px;
+	border-radius: 10px;
 	position: absolute;
 	left:25%;
 	margin-top: 10%;
@@ -11,10 +11,10 @@
 	cursor:pointer;
 }
 
-.nicebox:hover
+/*.nicebox:hover
 {
 	background-color: rgba(128,128,128,0.8);
-}
+}*/
 
 .nicebox h1
 {

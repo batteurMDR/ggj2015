@@ -47,7 +47,10 @@ function Level()
 
 	this.destroy = function(nameLevel){
 		var toolbar = $("#toolbar");
+
+	
         	$(".background."+nameLevel).each(function(){
+
 			$(this).remove();
 		});
        

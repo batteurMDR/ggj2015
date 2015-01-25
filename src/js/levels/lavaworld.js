@@ -10,8 +10,9 @@ function LevelLavaWorld()
 											"img/backgrounds/level_lavaworld/lava1.png",
 											"img/backgrounds/level_lavaworld/lava3.png"
 											],
-                                            "lavaworld"
-											,1000);
+                                            "lavaworld",
+                                            true,
+											1000);
 		game.background.init();
 
 		//this.showLevelTitle(this.prepareUserInterface.bind(this));
