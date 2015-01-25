@@ -7,6 +7,7 @@ var game =
 	background 		: null,
 	screen_width	: 0,
 	parallax 		: undefined,
+	dnd 			: null,
 
     treeGameObjectList: [],
     cloudGameObjectList: [],
@@ -17,7 +18,6 @@ var game =
 	fps : 25,
 	toolbar : undefined,
 	splash_screen : undefined,
-	originalBirdVerticalPosition:0,
 	background:null,
 
 	gameObjectList : [],
@@ -27,16 +27,18 @@ var game =
 	 {
 	 	this.screen_width 	= $('#screen').width();
 	 	this.screen_height 	= $('#screen').height();
-	 	this.background 	= new Background(["img/backgrounds/ingame2.png","img/backgrounds/ingame3.png"]);
+	 	//this.background 	= new Background(["img/backgrounds/ingame2.png","img/backgrounds/ingame3.png"]);
 	 	this.toolbar 		= new Toolbar();
 	 	this.toolbar.init();
+	 	this.dnd 			= new DragnDrop();
+	 	this.dnd.init();
 
 	 	this.splash_screen 	= new SplashScreen();
 	 	this.splash_screen.init();
         
         this.frameHandler = new FrameHandler();
         this.frameHandler.generateFrames();
-        this.parallax();
+        
 
 	 },
 
@@ -62,8 +64,12 @@ var game =
 	 {
 		this.splash_screen.hide();
 		$('#cloudscontainer').hide();
-		this.background.init();
-		this.toolbar.show();
+
+		this.levelmanager = new LevelManager();
+		this.levelmanager.init();
+
+
+		this.parallax();
 		this.gameLoop();
 	 },
 

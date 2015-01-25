@@ -6,7 +6,7 @@ function Cloud()
     this.name = "cloud";
     this.parallax_depth =0.1;
 
-    this.minY = this.height-20;
+    this.minY = 0;
     this.maxY = 300;
 
     this.id = 'Cloud'+Cloud.count;

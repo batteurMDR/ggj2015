@@ -1,0 +1,10 @@
+.level_title
+{
+	font-family: Helvetica; 
+	font-size : 200%;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	top:10%;
+	color:#FFF;
+}

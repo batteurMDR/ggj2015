@@ -44,7 +44,7 @@ GameObject.prototype.addItemToScreen=function()
                             {
                                 "width":this.width,
                                 "height":this.height,
-                                "class":this.name+" item layer",
+                                "class":this.name+" item layer draggable",
                                 "data-depth":this.parallax_depth
                             }
                     ).offset(
@@ -57,4 +57,5 @@ GameObject.prototype.addItemToScreen=function()
  
         $('#screen').append($item);
         game.parallax_update();
+        game.dnd.initDraggableGameObject($item);
      }   

@@ -7,7 +7,7 @@ function Background(backgrounds)
 	this.interval = null;
 
 	for (var i = 0; i < this.count; i++) {
-		$('<div/>',{"class":"background","id":i}).css("background","url("+this.backgrounds[i]+")").hide().appendTo($('#screen'));
+		$('<div/>',{"class":"background","id":'background_'+i}).css("background","url("+this.backgrounds[i]+")").hide().appendTo($('#screen'));
 	}
 
 	this.next=function(){
@@ -15,16 +15,21 @@ function Background(backgrounds)
 		if(this.current>(this.count-1)){
 			this.current = 0;
 		}
-		console.log(this.current);
 		$('.background:visible').fadeOut("slow");
-		$('.background[id='+this.current+']').fadeIn("slow");
+		$('#'+this.current).fadeIn("slow");
 	}
 
 	this.init=function(){
 		$('.background:first').fadeIn("fast");
 		$('#screen').css("background","#000");
-		this.current = parseInt($('.background:visible').attr('id'));
+		this.current = $('.background:visible').attr('id');
 		this.interval = setInterval(this.next.bind(this),this.speed);
 	}
 
+	this.destroy=function()
+	{
+
+	}
+
 }
+
