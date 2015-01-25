@@ -23,8 +23,11 @@ var game =
 
 	gameObjectList : [],
 
-	music : null,
+	sound : {
 
+		fond : null
+
+	},
 
 	 init : function()
 	 {
@@ -42,11 +45,11 @@ var game =
         this.frameHandler = new FrameHandler();
         this.frameHandler.generateFrames();
         
-        audio.addElem("music","sounds/music.ogg");
-        this.music = new Sound('music');
-        this.music.loop();
-        this.music.setVolume(20);
-        this.music.play();
+        audio.addElem("fond","sounds/fond.ogg");
+        this.sound.fond = new Sound('fond');
+        this.sound.fond.loop();
+        this.sound.fond.setVolume(20);
+        this.sound.fond.play();
 
 	 },
 
