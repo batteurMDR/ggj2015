@@ -42,7 +42,7 @@ var game =
 	 },
 
 
-	 parallax:function()
+	 parallaxLauncher:function()
 	 {
 	 	var scene = document.getElementById('screen');
 		this.parallax = new Parallax(scene,
@@ -68,7 +68,7 @@ var game =
 		this.levelmanager.init();
 
 
-		this.parallax();
+		this.parallaxLauncher();
 		this.gameLoop();
 	 },
 

@@ -1,6 +1,6 @@
 function LevelManager()
 {
-	this.nCurrentLevel = 3;
+	this.nCurrentLevel = 5;
 	/*Gere les enchainements de levels*/
 	this.init = function()
 	{
@@ -21,14 +21,10 @@ function LevelManager()
 			case 4:
 				return new LevelLightingWorld();
 			case 5:
-				return new LevelRainyWorld();
-			case 6:
-				return new LevelGrassWorld();
-			case 7:
 				return new LevelTreeWorld();
-			case 8:
+			case 6:
 				return new LevelCreatureWorld();
-			case 9:
+			case 7:
 				return new LevelFinished();
 
 		}

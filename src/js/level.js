@@ -6,7 +6,8 @@ function Level()
 									{
 										x		: 0,
 										y		: 0,
-										img_src	: ''
+										img_src	: '',
+										depth 	: 1.0
 									}
 								];
 
