@@ -43,4 +43,8 @@ function Level()
 		});
 
 	}
+
+	this.destroy = function(){
+		alert('destroy your level');
+	}
 }

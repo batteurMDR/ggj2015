@@ -8,6 +8,7 @@ var game =
 	screen_width	: 0,
 	parallax 		: undefined,
 	dnd 			: null,
+	levelmanager    : null,
 
     treeGameObjectList: [],
 	gameObjectList 	: [],

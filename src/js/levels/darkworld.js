@@ -1,5 +1,6 @@
 function LevelDarkWorld()
 {
+
 	this.init = function()
 	{
 		this.title = "The Dark World";
@@ -17,17 +18,19 @@ function LevelDarkWorld()
 
 	this.prepareUserInterface = function()
 	{
-		/**
-		var sHTML = '<div class="darkworld item_fire" onclick="LevelDarkWorld.finished();">Fire</div>'+
-					'<div class="darkworld item_water"  onclick="LevelDarkWorld.youLoose();">Water</div>';
-
-		
-		$('#screen')[0].innerHTML+=sHTML;
-		*/
-		var scr = $('#screen');
-		$('<div/>',{"class":"darkworld item_fire"}).text('Fire').appendTo(scr);
-		$('<div/>',{"class":"darkworld item_water"}).text('Water').appendTo(scr).hover(function(){
-			console.log("ok");
+		var scr = $('#background_0');
+		var self = this;
+		$('<div/>',{"class":"darkworld item_fire"}).text('Fire').appendTo(scr).click(function(e){
+			e.preventDefault();
+			this.remove();
+			$('.item_water').remove();
+			self.youWin();
+		});
+		$('<div/>',{"class":"darkworld item_water"}).text('Water').appendTo(scr).click(function(e){
+			e.preventDefault();
+			this.remove();
+			$('.item_fire').remove();
+			self.youLoose();
 		});
 	}
 
@@ -36,15 +39,16 @@ function LevelDarkWorld()
 		NicePopUP("You are god.... and you can create the world as you want !",'What\'s your desire ?',this.prepareUserInterface.bind(this));
 	}
 
-	
+	this.youLoose = function()
+	{
+		NicePopUP("This is not the begining","Water isn't the begining",this.prepareUserInterface.bind(this));
+	}
+
+	this.youWin = function()
+	{
+		NicePopUP("**WIN MSG**","ici",game.levelmanager.nextLevel());
+	}
 	
 }
 
 LevelDarkWorld.prototype =new Level();
-
-LevelDarkWorld.prototype.youLoose = function()
-{
-	NicePopUP("This is not the begining",
-			"Water isn't the begining",null);
-
-};
