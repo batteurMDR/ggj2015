@@ -25,7 +25,45 @@ var game =
 
 	sound : {
 
-		fond : null
+		fond : null,
+
+		fire : null,
+
+		water : null,
+
+		lava : null,
+
+		lightning : null,
+
+		rain : null,
+
+		bird : null,
+
+		wind : null,
+
+		voice : {
+
+			intro : null,
+
+			fireclick : null,
+
+			fireclicks : null,
+
+			waterclickw : null,
+
+			waterclickt : null,
+
+			lightningclick : null,
+
+			lightningclicks : null,
+
+			grass : null,
+
+			raining : null,
+
+			seedhover : null
+
+		}
 
 	},
 
@@ -45,7 +83,36 @@ var game =
         this.frameHandler = new FrameHandler();
         this.frameHandler.generateFrames();
         
-        audio.addElems([["fond","sounds/fond.ogg"]]);
+        audio.addElems([
+        	["fond","sounds/fond.ogg"],
+        	["lava","sounds/lava.ogg"],
+        	["fire","sounds/fire.ogg"],
+        	["lightning","sounds/lightning.ogg"],
+        	["rain","sounds/rain.ogg"],
+        	["bird","sounds/bird.ogg"],
+        	["wind","sounds/wind.ogg"],
+
+        	["vintro","sounds/voices/1_1.ogg"],
+
+        	["vfireclick","sounds/voices/2_3.ogg"],
+        	["vwaterclickw","sounds/voices/2_4.ogg"],
+        	["vfireclicks","sounds/voices/2_5.ogg"],
+
+        	["vwaterclickt","sounds/voices/3_1.ogg"],
+
+        	["vlightningclick","sounds/voices/4_2.ogg"],
+        	["vlightningclicks","sounds/voices/4_3.ogg"],
+
+        	["vgrass","sounds/voices/5_1.ogg"],
+
+        	["vraining","sounds/voices/4_2.ogg"],
+
+        	["vseedhover","sounds/voices/7_1.ogg"],
+
+
+        	["voutro","sounds/voices/9_1.ogg"],
+
+        ]);
         this.sound.fond = new Sound('fond');
         this.sound.fond.loop();
         this.sound.fond.setVolume(20);
@@ -75,6 +142,7 @@ var game =
 	 {
 		this.splash_screen.hide();
 		$('#cloudscontainer').hide();
+		//$('#screen')[0].style.background='#000';
 
 		this.levelmanager = new LevelManager();
 		this.levelmanager.init();

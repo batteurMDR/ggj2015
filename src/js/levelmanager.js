@@ -1,7 +1,7 @@
 function LevelManager()
 {
 
-    this.nCurrentLevel = 3;
+    this.nCurrentLevel = 1;
 	this.level = null;
 
 	/*Gere les enchainements de levels*/

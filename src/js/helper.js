@@ -7,11 +7,20 @@ function NicePopUP(sTitle,sText)
 		this.callback = false;
 	}
 	var self = this;
-	var $div = $('<div/>',{"class":"nicebox","data-depth":1.0}).appendTo($('#screen')).html('<h1>'+sTitle+'</h1><p>'+sText+'</p>').hide().fadeIn(800);
+
+
+	var $div = $('<div/>',
+					{"class":"nicebox","data-depth":1.0})
+					.appendTo($('#screen'))
+					.html('<h1>'+sTitle+'</h1><p>'+sText+'</p>')
+					.hide()
+					.fadeIn(800);
+
+
 	setTimeout(function(){
         $div.fadeOut(400);
         self.exec();
-    }, 500);
+    }, 4100);
 
 
 

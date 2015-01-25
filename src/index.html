@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="css/gameObject/tree.css">  
         <link rel="stylesheet" href="css/gameObject/chimere.css">       
         <link rel="stylesheet" href="css/nicebox.css" />
+        <link rel="stylesheet" href="css/credits.css" />
 
         <!-- Levels : CSS--> 
         <link rel="stylesheet" href="css/level/darkworld.css" />
@@ -43,6 +44,7 @@
         <script src="js/framehandler.js"></script>
         <script src="js/background.js"></script>
         <script src="js/GameObject/raindrop.js"></script>
+        <script src="js/credits.js"></script>
         <script src="js/audio.js"></script>
         <script src="js/game.js"></script>
         <script src="js/earthframe.js"></script>
@@ -72,18 +74,38 @@
     <body>
     <div id="screen">
         <div id="toolbar">
-            <div class="btn tree animated bounce" data-title-btn="tree"><img src="./img/Toolbar/seed.jpg" height="30" width="30" class="img-toolbar" id="draggable" style="border-radius:3px;"/></div>
+            <div class="btn tree animated bounce" data-title-btn="tree">
+                <img src="./img/Toolbar/seed.jpg" height="30" width="30" class="img-toolbar" id="draggable" style="border-radius:3px;"/>
+            </div>
             <div class="btn birds animated bounce" data-title-btn="birds"><div class="label">Birds</div></div>
-            <div class="btn clouds animated bounce" data-title-btn="clouds"><div class="label">Clouds</div></div>
-            <div class="btn rain animated bounce" data-title-btn="rain"><div class="label">Rain</div></div>
+            <div class="btn clouds animated bounce" data-title-btn="clouds">
+            <div class="">
+                <img src="./img/Toolbar/icon_cloud.png" height="30" width="30" class="img-toolbar" id="draggable" style="border-radius:3px;"/>
+            </div></div>
+            <div class="btn rain animated bounce" data-title-btn="rain"><div class="">
+                <img src="./img/Toolbar/icon_water.png" height="30" width="30" class="img-toolbar" id="draggable" style="border-radius:3px;"/>
+            </div></div>
              <div class="btn empty fire" ></div> 
              <div class="btn empty water" ></div>
              <div class="btn empty lightning"></div>
              <div class="btn empty seed"></div> 
-             <div class="btn chimere animated bounce" data-title-btn="chimere"><div class="label">Chimère</div></div>
+             <div class="btn chimere animated bounce" data-title-btn="chimere">
+                <div class=""><img src="./img/Toolbar/icon_life.png" height="30" width="30" class="img-toolbar" id="draggable" style="border-radius:3px;"/></div>
+             </div>
 
+            <div class="btn" id="btn_credits" onclick="credits.init();"><div class="label">Crédits</div></div>
             <div class="btn" id="btn_restart" onclick="game.restart();"><div class="label">Restart</div></div>
-        </div>        
+        </div>    
+        <div id="credits" style="display:none;text-align:center;">
+            <h1>EdenLife</h1>
+            <p>Développeurs :</p>
+            <p>Sébastien Mougel (https://twitter.com/smougel)</p>
+            <p>Julien Humbert (https://twitter.com/julien_humbert)</p>
+            <p>Louis Benoist--Foucher (https://twitter.com/louisbenfouch)</p>
+            <p>Graphistes :</p>
+            <p>Pierre Le Blond</p>
+            <p>Pawel Dziurla (https://www.facebook.com/pawel.dziurla)</p>
+        </div>    
     </div>
     <div class="audio"></div>
     <script src="js/vendor/parallax/parallax.js"></script>

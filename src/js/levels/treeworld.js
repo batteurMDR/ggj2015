@@ -4,18 +4,9 @@ function LevelTreeWorld()
 	{
 		this.title = "The Tree World";
 
-
 		game.background = new Background(["img/backgrounds/background0.png"], "treeworld");
 		game.background.init();
 
-		//game.background.destroy();
-		/*game.background = new Background([
-											"img/backgrounds/level_lavaworld/lava0.png",
-											"img/backgrounds/level_lavaworld/lava1.png",
-											"img/backgrounds/level_lavaworld/lava3.png"
-											]
-											,1000);
-		game.background.init();*/
 
 		this.showLevelTitle(this.prepareUserInterface.bind(this));
 		game.toolbar.show();
