@@ -1,0 +1,21 @@
+
+
+
+.darkworld.item_fire
+{
+	float:left;
+	width:30%;
+	height: 30%;
+	background-color:rgba(128,0,0,0.8);
+	margin:10%;
+}
+
+
+.darkworld.item_water
+{
+	float:left;
+	width:30%;
+	height: 30%;
+	background-color:rgba(0,0,128,0.8);
+	margin:10%;
+}

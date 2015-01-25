@@ -1,0 +1,27 @@
+.nicebox
+{
+	background-color: rgba(80,80,80,0.8);
+	color:#FFF;
+	border-radius: 2px;
+	position: absolute;
+	left:25%;
+	margin-top: 10%;
+	width: 50%;
+	padding: 5%;
+	cursor:pointer;
+}
+
+.nicebox:hover
+{
+	background-color: rgba(128,128,128,0.8);
+}
+
+.nicebox h1
+{
+	font-size:200%;
+}
+
+.nicebox p
+{
+	font-size: 100%;
+}

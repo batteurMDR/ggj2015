@@ -26,7 +26,7 @@ var game =
 	 {
 	 	this.screen_width 	= $('#screen').width();
 	 	this.screen_height 	= $('#screen').height();
-	 	this.background 	= new Background(["img/backgrounds/ingame2.png","img/backgrounds/ingame3.png"]);
+	 	//this.background 	= new Background(["img/backgrounds/ingame2.png","img/backgrounds/ingame3.png"]);
 	 	this.toolbar 		= new Toolbar();
 	 	this.toolbar.init();
 	 	this.dnd 			= new DragnDrop();
@@ -37,7 +37,7 @@ var game =
         
         this.frameHandler = new FrameHandler();
         this.frameHandler.generateFrames();
-        this.parallax();
+        
 
 	 },
 
@@ -63,8 +63,12 @@ var game =
 	 {
 		this.splash_screen.hide();
 		$('#cloudscontainer').hide();
-		this.background.init();
-		this.toolbar.show();
+
+		this.levelmanager = new LevelManager();
+		this.levelmanager.init();
+
+
+		this.parallax();
 		this.gameLoop();
 	 },
 
