@@ -10,7 +10,7 @@ function Cloud()
     this.maxY = 300;
 
     this.id = 'Cloud'+Cloud.count;
-    Cloud.count++;
+    Cloud.count++; 
 
     this.fps = 24;
     

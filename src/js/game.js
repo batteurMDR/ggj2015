@@ -9,6 +9,7 @@ var game =
 	parallax 		: undefined,
 
     treeGameObjectList: [],
+    cloudGameObjectList: [],
 	gameObjectList 	: [],
     earthFramesList : [],
 
@@ -90,24 +91,32 @@ var game =
 	 gameLoop : function()
 	 {
 	 	this.timer_renderer = setInterval(this.animate.bind(this),1/this.fps*1000);
-	 },
+   	 	this.timer2_renderer = setInterval(this.animate2.bind(this),1/this.fps*3000);
+    },
 
 	 animate : function()
 	 {
 	 	for(var oGameObject in this.gameObjectList )
 	 	{
             var gameObject = this.gameObjectList[oGameObject];
-            this.detectSeedGrowth(gameObject);
-           
+         
             if(gameObject.animable){
+        
 	 		    gameObject.animate();
             }
 	 	}
 	 },
-
+    animate2 : function(){
+        for(var i = 0; i++ < this.cloudGameObjectList;){
+        	if(this.cloudGameObjectList[i] instanceof CloudRaindrop){
+                this.detectSeedGrowth(this.cloudGameObjectList[i]);
+            }
+            this.cloudGameObjectList[i].animate();
+        }
+    },
 	 detectSeedGrowth: function(gameObject)
 	 {
-		if(gameObject instanceof CloudRaindrop){
+	
             for(var key in this.treeGameObjectList){
             	if(this.treeGameObjectList[key].animable){
                 	if(gameObject.x + gameObject.width >= this.treeGameObjectList[key].x && gameObject.x < this.treeGameObjectList[key].x + this.treeGameObjectList[key].width){
@@ -118,14 +127,15 @@ var game =
 					}
                 }
             }
-        }
+        
 	 },
 
 	 addGameObjectToList : function(oGameObject)
 	 {
         if(oGameObject instanceof Tree){
             this.treeGameObjectList.push(oGameObject);
+        }else{
+	 	    this.gameObjectList.push(oGameObject);
         }
-	 	this.gameObjectList.push(oGameObject);
 	 }
 }

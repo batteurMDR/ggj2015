@@ -1,5 +1,5 @@
 function CloudRaindrop(){
-    this.number = 50;
+    this.number = 20;
     this.raindrops = [];
     this.dropped= 0;
     this.todrop = 1;
