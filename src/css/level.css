@@ -1,6 +1,7 @@
 .level_title
 {
 	font-family: Helvetica; 
+	font-weight: bold;
 	font-size : 200%;
 	text-align: center;
 	width: 100%;
@@ -8,4 +9,5 @@
 	top:10%;
 	color:#FFF;
 	z-index: 99;
+	text-shadow: 1px 1px 20px rgba(0,0,0,0.9);
 }

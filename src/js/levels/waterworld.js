@@ -21,6 +21,19 @@ function LevelWaterWorld()
 
 	}
 
+	this.showRain = function()
+	{
+		game.background.destroy();
+        game.background = new Background([
+											"img/backgrounds/level_waterworld/rain0.png",
+											"img/backgrounds/level_waterworld/rain1.png",
+											"img/backgrounds/level_waterworld/rain2.png"
+											],
+                                            "waterworld"
+											,3000);
+        game.background.init();
+        //setTimeout(this.youWin.bind(this,3000));
+	}
 
 	this.prepareUserInterface = function()
 	{
@@ -32,12 +45,18 @@ function LevelWaterWorld()
 			//$('.item_water').remove();
 			//self.youWin();
             $('.btn.lightning').css('background-image', "url(img/levels/lightning.png)");
-            self.youWin();
+            
+            self.showRain();
+            
            
 		});
 	}
+
+	
+
     this.youWin = function(){
-        game.background.destroy();
+        
+		
         NicePopUP("Maybe that ...thing... I got will pierce them?","What about a try?", game.levelmanager.nextLevel());
     }
 	
