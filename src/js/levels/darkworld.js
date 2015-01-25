@@ -6,7 +6,10 @@ function LevelDarkWorld()
 		this.title = "The Dark World";
 
 		//game.background.destroy();
-		game.background = new Background(["img/backgrounds/level_darkworld/darkworld_background.png"], "darkworld");
+		game.background = new Background(
+            ["img/backgrounds/level_darkworld/darkworld_background.png"],
+            "darkworld",
+            false);
 		game.background.init();
 
 		this.showLevelTitle(this.showInstruction.bind(this));
