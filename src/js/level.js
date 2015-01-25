@@ -46,7 +46,9 @@ function Level()
 	}
 
 	this.destroy = function(){
-		alert('destroy your level');
+		var toolbar = $("#toolbar");
+        $("#screen").empty().append(toolbar);
+       
 	}
 }
 

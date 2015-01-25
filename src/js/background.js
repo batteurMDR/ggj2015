@@ -10,7 +10,8 @@ function Background(backgrounds,timing)
 		$('<div/>',
 					{"class":"background","id":'background_'+i})
 					.css("background","url("+this.backgrounds[i]+")")
-					.hide()
+					.css("z-index", 0)
+                    .hide()
 					.appendTo($('#screen'));
 	}
 

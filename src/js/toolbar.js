@@ -4,7 +4,7 @@ function Toolbar()
 	this.init=function()
 	{
         
-		$('.btn:not(#btn_restart)').each(function(){
+		$('.btn:not(#btn_restart):not(.empty)').each(function(){
 			var that = $(this);
 			that.toggleClass('bounce');
             
@@ -40,4 +40,19 @@ function Toolbar()
 	{
 		$('#toolbar').hide();
 	}
+    this.hideChildren=function(game){
+        if(game){
+            $('#toolbar').children().each(function(){
+               if($(this).hasClass('empty')){
+                    $(this).hide();
+               }else{
+                    $(this).show();
+               }
+            });
+        }else{
+            $('#toolbar').children(':not(.empty)').each(function(){
+                $(this).hide();
+            })
+        };
+    }
 }

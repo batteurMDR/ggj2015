@@ -1,16 +1,22 @@
 .darkworld.item_fire
 {
 	float:left;
-	width:30%;
-	height: 30%;
+	/*width:30%;
+	height: 30%;*/
 	background-color:rgba(128,0,0,0.8);
 	margin:10%;
 }
 .darkworld.item_water
 {
 	float:left;
-	width:30%;
-	height: 30%;
+	/*width:30%;
+	height: 30%;*/
 	background-color:rgba(0,0,128,0.8);
 	margin:10%;
+}
+.skill{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    border: 2px solid #AAA;
 }

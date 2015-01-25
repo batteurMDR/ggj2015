@@ -19,34 +19,47 @@ function LevelDarkWorld()
 	{
 		var scr = $('#background_0');
 		var self = this;
-		$('<div/>',{"class":"darkworld item_fire"}).text('Fire').appendTo(scr).click(function(e){
+		$('<img/>',{"class":"darkworld item_fire skill", "src":"img/levels/fire.png"}).appendTo(scr).click(function(e){
 			e.preventDefault();
 			this.remove();
-			$('.item_water').remove();
-			self.youWin();
+			//$('.item_water').remove();
+			//self.youWin();
+            $('.btn.fire').css('background-image', "url(img/levels/fire.png)").on("click", function(){
+                e.preventDefault();
+                self.youWin();
+            });
 		});
-		$('<div/>',{"class":"darkworld item_water"}).text('Water').appendTo(scr).click(function(e){
+		$('<img/>',{"class":"darkworld item_water skill", "src":"img/levels/water.png"}).appendTo(scr).click(function(e){
 			e.preventDefault();
 			this.remove();
-			$('.item_fire').remove();
-			self.youLoose();
-
+			//$('.item_water').remove();
+			//self.youWin();
+            $('.btn.water').css('background-image', "url(img/levels/water.png)").on("click", function(){
+                e.preventDefault();
+                self.youLoose();
+            });
 		});
+        //var toolbar = new Toolbar();
+        //toolbar.init();
+        game.toolbar.show();
+        game.toolbar.hideChildren(false);
 	}
 
 	this.showInstruction = function()
 	{
-		NicePopUP("You are god.... and you can create the world as you want !",'What\'s your desire ?',this.prepareUserInterface.bind(this));
+        NicePopUP("I just got a world to play with.",'My mentor adviced me to destroy everything here to begin on a good basis.',this.prepareUserInterface.bind(this));
+		//NicePopUP("You are god.... and you can create the world as you want !",'What\'s your desire ?',this.prepareUserInterface.bind(this));
 	}
 
 	this.youLoose = function()
 	{
-		NicePopUP("This is not the begining","Water isn't the begining",this.prepareUserInterface.bind(this));
+		NicePopUP("All stories tell about survivors of this.","And I don't really want to deal with this barbarians.");
 	}
 
 	this.youWin = function()
 	{
 		NicePopUP("**WIN MSG**","ici",game.levelmanager.nextLevel());
+        $('.btn.fire').hide();
 	}
 	
 }
