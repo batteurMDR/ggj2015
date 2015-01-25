@@ -18,6 +18,7 @@ function LevelWaterWorld()
 		this.showLevelTitle(this.prepareUserInterface.bind(this));
 		//game.toolbar.show();
 
+		game.sound.voice.lightningclick = new Sound("vlightningclick");
 
 	}
 
@@ -38,6 +39,7 @@ function LevelWaterWorld()
 	}
     this.youWin = function(){
         game.background.destroy();
+        game.sound.voice.lightningclick.play();
         NicePopUP("Maybe that ...thing... I got will pierce them?","What about a try?", game.levelmanager.nextLevel());
     }
 	

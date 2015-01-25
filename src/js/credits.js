@@ -11,6 +11,7 @@ var credits = {
 
 	exit : function(){
 	 	$('#credits').hide();
+	 	game.levelmanager.nCurrentLevel = 1;
 	 	game.restart();
 	}
 

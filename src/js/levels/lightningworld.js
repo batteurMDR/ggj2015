@@ -17,8 +17,7 @@ function LevelLightingWorld()
 		this.showLevelTitle(this.prepareUserInterface.bind(this));
 		//game.toolbar.show();
 
-		game.sound.voice.lightninghover = new Sound("vlightninghover");
-		game.sound.voice.lightningclick = new Sound("vlightningclick");
+		game.sound.voice.lightningclicks = new Sound("vlightningclicks");
 		game.sound.voice.grass = new Sound("vgrass");
 
 	}
@@ -38,8 +37,9 @@ function LevelLightingWorld()
 	}
     this.youWin = function(){
         game.background.destroy();
-        game.sound.voice.lightningclick.play();
+        game.sound.voice.lightningclicks.play();
         NicePopUP("It worked! It's raining","", function(){
+           	game.sound.rain.pause();
 			game.sound.voice.grass.play();
        	 	NicePopUP("Life is coming out of nowhere! But why does the grass appear first?","I maybe shouldn't have skipped the bio courses at God's college...", game.levelmanager.nextLevel())
     	});

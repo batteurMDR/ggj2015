@@ -18,10 +18,12 @@ function LevelLavaWorld()
 		//game.toolbar.show();
 
 		game.sound.voice.waterclickt = new Sound("vwaterclickt");
+		game.sound.rain = new Sound("rain");
 
         $('.btn.water').click(function(){
            game.background.destroy();
            game.sound.voice.waterclickt.play();
+           game.sound.rain.play();
            NicePopUP("I should have thought that water will evaporate...", "How could I empty those clouds?", game.levelmanager.nextLevel());
           $(this).hide();  
             
