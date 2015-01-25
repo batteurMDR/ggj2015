@@ -6,6 +6,7 @@
   		"height" : 750,
   		"fullscreen" : false,
         "toolbar": true,
-        "frame"  : true
+        "frame"  : true,
+        "icon": "ggj2015/src/img/app_icon/Tree.png"
   	}
 }
