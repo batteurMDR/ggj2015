@@ -24,8 +24,13 @@ function LevelDarkWorld()
 		
 		$('#screen')[0].innerHTML+=sHTML;
 		*/
-		var scr = $('#screen');
-		$('<div/>',{"class":"darkworld item_fire"}).text('Fire').appendTo(scr);
+		var scr = $('#background_0');
+		var fire = $('<div/>',{"class":"darkworld item_fire"}).text('Fire');
+       fire.on("click", function(){
+            console.log("bla");   
+       }) 
+        
+        fire.appendTo(scr);
 		$('<div/>',{"class":"darkworld item_water"}).text('Water').appendTo(scr).hover(function(){
 			console.log("ok");
 		});
