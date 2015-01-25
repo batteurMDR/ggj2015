@@ -43,6 +43,7 @@ var game =
         
         audio.addElem("music","sounds/music.ogg");
         this.music = new Sound('music');
+        this.music.loop();
         this.music.setVolume(20);
         this.music.play();
 

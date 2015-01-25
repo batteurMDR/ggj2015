@@ -10,6 +10,7 @@ var audio = {
 }
 function Sound(id)
 {
+	this.id=id;
 	this.elem=document.getElementById(id);
 	this.play=function(){
 		this.elem.play();
@@ -20,5 +21,8 @@ function Sound(id)
 	this.setVolume=function(value){
 		this.elem.volume = (value/100);
 		return (this.elem.volume*100);
+	}
+	this.loop=function(){
+		$('#'+id).attr("loop",true);
 	}
 }
