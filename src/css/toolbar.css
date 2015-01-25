@@ -2,13 +2,15 @@
 #toolbar
 {
 	height: 50px;
-	width:100%;
+	width:50%;
+	left:25%;
 	background-color:rgba(255,255,255,0.2);
 	position:absolute;
 	bottom:10px;
 	z-index: 50;
 	display:none;
 	box-shadow: 1px 1px 10px rgba(0,0,0,0.8);
+	border-radius: 2px;
 }
 
 #btn_restart

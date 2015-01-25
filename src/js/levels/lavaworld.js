@@ -14,7 +14,7 @@ function LevelLavaWorld()
 		game.background.init();
 
 		this.showLevelTitle(this.prepareUserInterface.bind(this));
-		//game.toolbar.show();
+		game.toolbar.show();
 
 
 	}
