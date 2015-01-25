@@ -17,9 +17,20 @@ function LevelLavaWorld()
 
 		//this.showLevelTitle(this.prepareUserInterface.bind(this));
 		//game.toolbar.show();
+
+
+		game.sound.voice.waterclickt = new Sound("vwaterclickt");
+		game.sound.rain = new Sound("rain");
+
+        
+
+           
+           
+
+
 		var self = this;
         $('.btn.water').click(function(){
-            
+            game.sound.voice.waterclickt.play();
             $(this).hide(); 
             self.youWin();
         });

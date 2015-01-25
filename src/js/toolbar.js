@@ -4,7 +4,7 @@ function Toolbar()
 	this.init=function()
 	{
         
-		$('.btn:not(#btn_restart):not(.empty)').each(function(){
+		$('.btn:not(#btn_restart):not(.empty):not(#btn_credits)').each(function(){
 			var that = $(this);
 			that.toggleClass('bounce');
             

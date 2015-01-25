@@ -7,6 +7,8 @@ function NicePopUP(sTitle,sText)
 		this.callback = false;
 	}
 	var self = this;
+
+
 	var $div = $('<div/>',
 					{"class":"nicebox","data-depth":1.0})
 					.appendTo($('#screen'))
@@ -18,7 +20,7 @@ function NicePopUP(sTitle,sText)
 	setTimeout(function(){
         $div.fadeOut(400);
         self.exec();
-    }, 3000);
+    }, 4100);
 
 
 
