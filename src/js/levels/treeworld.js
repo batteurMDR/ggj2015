@@ -4,7 +4,6 @@ function LevelTreeWorld()
 	{
 		this.title = "The Tree World";
 
-
 		game.background = new Background(["img/backgrounds/background0.png"], "treeworld");
 		game.background.init();
 

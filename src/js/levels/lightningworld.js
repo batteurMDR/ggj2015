@@ -103,11 +103,11 @@ function LevelLightingWorld()
 
 
         NicePopUP("It worked! It's raining","", function(){
-            game.sound.rain.pause();
-      game.sound.voice.grass.play();
-         game.levelmanager.nextLevel.bind(game.levelmanager)
+          game.levelmanager.nextLevel.bind(game.levelmanager);
+          game.sound.rain.pause();
+          //game.sound.voice.grass.play();
+          
       });
-
     }
 
 
