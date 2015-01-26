@@ -15,10 +15,17 @@
     left: 0;
     height: 100%;
   	-webkit-transition: opacity 0.5s ease-out; 
+    -moz-transition: opacity 0.5s ease-out; 
     -webkit-animation: moveSlideshow 10s linear infinite;
+    -moz-animation: moveSlideshow 10s linear infinite;
 }
 
 @-webkit-keyframes moveSlideshow {
+    0% { left: 0; }
+    100% { left: -1366px; }
+}
+
+@-moz-keyframes moveSlideshow {
     0% { left: 0; }
     100% { left: -1366px; }
 }
