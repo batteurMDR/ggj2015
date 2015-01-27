@@ -219,7 +219,7 @@ var game =
                 
 	                setTimeout(function(){
 	                	//console.log('On anime la graine='+seed.id);
-	                    seed.spriteAnimator();
+	                    //seed.spriteAnimator();
 	                }, 1000);
 				}
             }
