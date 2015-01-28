@@ -1,11 +1,10 @@
 function CloudRaindrop(){
-    this.number = 20;
-    this.raindrops = [];
-    this.dropped= 0;
-    this.todrop = 1;
-    this.id = "CloudRain"+Cloud.count;
-    this.parallax_depth =0.8;
-
+    this.init = function(){
+        this.number = 20;
+        this.raindrops = [];
+        this.id = "CloudRain"+Cloud.count;
+        this.parallax_depth =0.8;
+    }
 
     this.getCoordinate= function()
     {
@@ -21,7 +20,7 @@ function CloudRaindrop(){
         this.Xmax = this.Xmax -( this.Xmax - this.Xmin )/2.5;
     };
     Cloud.count++;
-   
+   this.init();
 }
 
 
