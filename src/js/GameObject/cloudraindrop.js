@@ -32,10 +32,7 @@ CloudRaindrop.prototype.generateDroplets = function(){
     this.getCoordinate();
     for(var i =0; i < this.number; i++){
         this.raindrops[i] = new Raindrop(this);
-
-        var x = Math.round(Math.random() * (this.Xmax - this.Xmin) + this.Xmin);
-        var y =  Math.round(Math.random() * (this.Ymax - this.Ymin) + this.Ymin);
-        this.raindrops[i].setCoordinate(x, y);
+        this.raindrops[i].generateCoordinate();
         this.raindrops[i].addItemToScreen();
         game.addGameObjectToList(this.raindrops[i]);
     }

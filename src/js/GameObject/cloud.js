@@ -12,12 +12,12 @@ function Cloud()
     this.id = 'Cloud'+Cloud.count;
     Cloud.count++; 
 
-    this.fps = 24;
+    //this.fps = 24;
     
     this.animate = function(){
         var width = game.screen_width;
         var vitesse = 30; //Pixels/sec
-        this.x = this.x + vitesse * 1/this.fps;
+        this.x += vitesse * 1/game.fps;
         if(this.x > width){
             this.x = -this.width;
         }

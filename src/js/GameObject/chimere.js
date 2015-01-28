@@ -1,5 +1,10 @@
+//Viewed 
+//To update
+
 function Chimere()
 {
+//    In a function? What does it stands for?
+//    Z-index depends on layer? 
 	frame = Math.round(Math.random()*3)+1;
 	switch(frame){
 		case 1:
@@ -28,10 +33,10 @@ function Chimere()
         var width = game.screen_width;
         var vitesse = 90; 
         var chimere = $('#'+this.id);
-        this.x = this.x + vitesse * 1/game.fps * this.sens;
+        this.x +=  vitesse * 1/game.fps * this.sens;
         if(this.x>(width-this.width)){
             this.sens= -1;
-             chimere.css('-webkit-transform', 'scaleX(1)');
+            chimere.css('-webkit-transform', 'scaleX(1)');
         }
         if(this.x<0){
             this.sens = 1;
