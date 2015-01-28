@@ -1,31 +1,31 @@
-//Viewed 
-//To update
 
 function Chimere()
 {
-//    In a function? What does it stands for?
-//    Z-index depends on layer? 
-	frame = Math.round(Math.random()*3)+1;
-	switch(frame){
-		case 1:
-			frame = 0;
-			break;
-		case 2:
-			frame = 2;
-			break;
-		case 3:
-			frame = 4; 
-			break;
-	}
-    this.frame = game.frameHandler.earthFramesList[0];
-	this.height = 121;
-	this.width  = 145; 
-    this.zIndex = 2;
-    this.name = "chimere";    
-    this.id = "Chimere"+Chimere.count;
-    this.minY = this.frame.maxY-25;
-    this.maxY = this.frame.maxY;
-    this.sens = -1;
+    this.init = function(){
+        //Not needed right now, must be to handle layer
+        /*frame = Math.round(Math.random()*3)+1;
+	    switch(frame){
+		    case 1:
+			    frame = 0;
+			    break;
+		    case 2:
+			    frame = 2;
+			    break;
+		    case 3:
+			    frame = 4; 
+			    break;
+	    }*/
+        this.frame = game.frameHandler.earthFramesList[0];
+	    this.height = 121;
+	    this.width  = 145; 
+        this.zIndex = 2;
+        this.name = "chimere";    
+        this.id = "Chimere"+Chimere.count;
+        this.minY = this.frame.maxY-25;
+        this.maxY = this.frame.maxY;
+        this.sens = -1;
+    }
+    this.init();
     Chimere.count++;
 
     this.animate = function()
