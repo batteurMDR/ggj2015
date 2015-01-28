@@ -1,18 +1,20 @@
 function Cloud()
 {
-    this.height = 124;
-    this.width = 200;
-    this.zIndex = 10;
-    this.name = "cloud";
-    this.parallax_depth =0.1;
+    this.init = function(){
+        this.height = 124;
+        this.width = 200;
+        this.zIndex = 10;
+        this.name = "cloud";
+        this.parallax_depth =0.1;
 
-    this.minY = 0;
-    this.maxY = 300;
+        this.minY = 0;
+        this.maxY = 300;
 
-    this.id = 'Cloud'+Cloud.count;
+        this.id = 'Cloud'+Cloud.count;
+    }
     Cloud.count++; 
-
-    //this.fps = 24;
+    this.init();
+    
     
     this.animate = function(){
         var width = game.screen_width;

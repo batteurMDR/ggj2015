@@ -1,11 +1,5 @@
 function Tree(frame, posX)
 {
-   
-
-
-   
-
-    
     this.init = function (frame, posX){
 
         if(frame == undefined || (frame < 0 || frame > 10)){
