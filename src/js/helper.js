@@ -20,6 +20,7 @@ function NicePopUP(sTitle,sText)
 	setTimeout(function(){
         $div.fadeOut(400);
         self.exec();
+        $div.remove();
     }, 4100);
 
 
