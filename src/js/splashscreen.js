@@ -10,8 +10,8 @@ function SplashScreen()
  	this.setBackground=function()
 	 {
 	 	$('#screen').css(
-	 							"background-image", "url(img/backgrounds/background0.png)"
-	 						);
+	 				"background-image", "url(img/backgrounds/background0.png)"
+	 				);
 	 }
 
 	 this.setClouds=function()
@@ -25,10 +25,7 @@ function SplashScreen()
 	 {
 		var $mainmenu = $('<div/>',{'id' : 'mainmenu','class':'animated wobble'});
 	 	$('#screen').prepend($mainmenu);
-
 	 	$('#mainmenu').html('<h1>EdenLife</h1><h2 onclick="game.start();" class="animated pulse infinite" id="btn_start">Start</h2>');
-
-
 	 }
 
 	 this.hide=function()

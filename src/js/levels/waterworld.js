@@ -15,11 +15,11 @@ function LevelWaterWorld()
                                             false,
 											3000);
         var div = $('<div/>',
-		    {"class":"background1 waterworld"})
+		    {"class":"cloudBackground waterworld"})
 				.css("background","url(img/backgrounds/level_waterworld/cloud_noLight.png)")
-				.css("z-index", 1)
+				
                 .css("background-repeat", "no-repeat")
-                .css("left", "25%")
+                
                 .hide()
                 .appendTo($('#screen'))    
                 .fadeIn({

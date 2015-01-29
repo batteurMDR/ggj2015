@@ -7,8 +7,7 @@ function ParallaxSliceGenerator(oSliceData)
 		len=this.oSliceData.length;
 		for(var i=0;i<len;i++)
 		{
-			slice = this.oSliceData[i];
-			//console.log(slice);
+			slice = this.oSliceData[i];	
 			this.addSlice(slice);
 		}
 
@@ -19,19 +18,16 @@ function ParallaxSliceGenerator(oSliceData)
 		$('<div/>',
 					{"class":"layer","data-depth":slice.depth})
 					.css(
-							{								
-									'background-image':"url("+slice.img_src+")",
-									'background-repeat':'no-repeat',
-									'left':slice.x+'px',
-									'top':slice.y+'px',
-									'position':'absolute',
-									'width':'100%',
-									'height':'100%',
-									'z-index':slice.zIndex
-							}
-							
-							
-						)
+						{							
+							'background-image':"url("+slice.img_src+")",
+							'background-repeat':'no-repeat',
+							'left':slice.x+'px',
+							'top':slice.y+'px',
+							'position':'absolute',
+							'width':'100%',
+							'height':'100%',
+							'z-index':slice.zIndex
+						})
 					.appendTo($('#screen'));
 	}
 }

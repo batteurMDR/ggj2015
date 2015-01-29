@@ -15,10 +15,9 @@ function Toolbar()
 				    setTimeout(function(){
 					    that.toggleClass('wobble');
 				    },1000);
-                if(!that.hasClass('tree')){
-
-                    new Generator(that.data("titleBtn"));
-                }
+                    if(!that.hasClass('tree')){
+                        new Generator(that.data("titleBtn"));
+                    }
 			    });
             
 			that.mouseover(function(){

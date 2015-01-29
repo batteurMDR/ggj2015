@@ -9,7 +9,7 @@ function LevelLightingWorld()
 		    {"class":"background1 treeworld"})
 				.css("background","url(img/backgrounds/level_treeworld/slice1.png)")
 				.css("z-index", 0)
-                .css("background-repeat", "no-repeat")
+                //.css("background-repeat", "no-repeat")
                 .css("background-position-x", "50%")
                 .hide()
                 .appendTo($('#screen'))    
@@ -82,7 +82,7 @@ function LevelLightingWorld()
                         complete:function(){
                           
                             $wrapper.fadeOut({
-                                duration: 600, 
+                                duration: 800, 
                                 complete:function(){
                                     self.thunder($wrapper, time+1); 
                                 }
@@ -91,7 +91,7 @@ function LevelLightingWorld()
                     });
                }, Math.random()* 1000);
        }else{
-           setTimeout(self.showRain.bind(self), 3000);
+           setTimeout(self.showRain.bind(self), 1000);
        }
     }
 
@@ -109,7 +109,7 @@ function LevelLightingWorld()
 
   this.showRain = function()
   {
-    game.sound.rain.play();
+    //game.sound.rain.play();
     game.background.destroy();
         game.background = new Background([
                       "img/backgrounds/level_waterworld/rain0.png",
