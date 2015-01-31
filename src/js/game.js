@@ -15,13 +15,6 @@ var game =
 	gameObjectList 	: [],
     earthFramesList : [],
 
-	sens : 1,
-	fps : 25,
-	toolbar : undefined,
-	splash_screen : undefined,
-	background:null,
-
-	gameObjectList : [],
 
 	sound : {
 
@@ -169,7 +162,7 @@ var game =
 	 	this.splash_screen.show();
 	 	this.splash_screen.setBackground();
 	 	$('#cloudscontainer').show();
-
+//restart level
 	 },
 
 
@@ -199,7 +192,7 @@ var game =
             var gameObject = this.gameObjectList[oGameObject];
          
             if(gameObject.animable){
-        
+      //Why not instanceof?
 	 		    if(gameObject.id.substr(0,9)=='CloudRain')
 	 		    	this.detectSeedGrowth(gameObject);
             }
@@ -216,7 +209,7 @@ var game =
         		var seed = this.treeGameObjectList[key];
 
             	if(seed.x> oCloudRain.x &&  seed.x + seed.width < oCloudRain.x + oCloudRain.width){
-                
+               //What if cloud is sma&ller than seed? 
 	                setTimeout(function(){
 	                	//console.log('On anime la graine='+seed.id);
 	                    //seed.spriteAnimator();

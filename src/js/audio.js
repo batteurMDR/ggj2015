@@ -14,8 +14,16 @@ var audio = {
 		}
 	}
 }
+
+	//background:null,
+
+	//gameObjectList : [],
+//function Audio(){
+    
+//}
+
 function Sound(id)
-{
+    {
 	this.id=id;
 	this.elem=document.getElementById(id);
 	this.play=function(){

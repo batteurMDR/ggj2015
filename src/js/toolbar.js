@@ -7,7 +7,7 @@ function Toolbar()
 		$('.btn:not(#btn_restart):not(.empty):not(#btn_credits)').each(function(){
 			var that = $(this);
 			that.toggleClass('bounce');
-            
+             that.off(); 
 		    	that.click(function(e)
 			    {
 				    e.preventDefault();

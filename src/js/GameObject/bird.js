@@ -1,6 +1,3 @@
-//viewed
-
-
 function Bird()
 {
 

@@ -1,3 +1,6 @@
+//Génération nombre *2?
+
+
 var Generator = function(name, frame, posX)
 {
 
@@ -30,7 +33,6 @@ var Generator = function(name, frame, posX)
     {
      	switch(name){
 	        case "birds":
-
 	            oBird =  new Bird();
 	            return oBird;
 	            break;
@@ -56,7 +58,7 @@ var Generator = function(name, frame, posX)
     var number = this.getObjectCountToCreate(name);
     
 
-    for(var i = 0; i < number; i++)2
+    for(var i = 0; i < number; i++)
     {
         var oGameObject = this.getGameObject(name);
         if(oGameObject.name){
