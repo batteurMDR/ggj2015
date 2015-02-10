@@ -118,6 +118,17 @@ var game =
         this.sound.fond.setVolume(20);
         this.sound.fond.play();
 
+        window.requestAnimFrame = (function(){
+  			return  window.requestAnimationFrame       ||
+		          window.webkitRequestAnimationFrame ||
+		          window.mozRequestAnimationFrame    ||
+		          window.oRequestAnimationFrame      ||
+		          window.msRequestAnimationFrame     ||
+		          function(/* function */ callback, /* DOMElement */ element){
+		            window.setTimeout(callback, 1000 / 60);
+		          };
+		})();
+
 	 },
 
 
@@ -175,7 +186,7 @@ var game =
 
 	 gameLoop : function()
 	 {
-	 	this.timer_renderer = setInterval(this.animate.bind(this),1/this.fps*1000);
+		this.animate();
    	 	this.timer_colision_detector = setInterval(this.colision_detector.bind(this),400);
     },
 
@@ -190,6 +201,7 @@ var game =
 	 		    gameObject.animate();
             }
 	 	}
+	 	window.requestAnimFrame(this.animate.bind(this));
 	 },
 
 	 colision_detector:function()
@@ -234,5 +246,6 @@ var game =
         }else{
 	 	    this.gameObjectList.push(oGameObject);
         }
-	 }
+	 },
+
 }

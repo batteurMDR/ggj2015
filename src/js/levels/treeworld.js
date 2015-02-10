@@ -48,6 +48,7 @@ function LevelTreeWorld()
     	var test = this;
 		$('<img/>',{"class":"treeworld item_seed skill", "src":"img/Toolbar/seed.jpg"}).appendTo(scr).click(function(e){
 			e.preventDefault();
+			e.stopPropagation();
 			this.remove();
 			//$('.item_water').remove();
 			//self.youWin();
